@@ -1,0 +1,11 @@
+data_role,time_min,Reference Part II,Reference Part III (-IPTG),Experimental Part II,Experimental Part III (-IPTG)
+reference,2,0.332,0.282,NA,NA
+reference,4,0.602,0.546,NA,NA
+reference,6,0.876,0.815,NA,NA
+reference,8,0.965,1.094,NA,NA
+reference,10,1.407,1.328,NA,NA
+experimental,2,NA,NA,0.276,0.259
+experimental,4,NA,NA,0.544,0.48
+experimental,6,NA,NA,0.817,0.696
+experimental,8,NA,NA,1.137,0.938
+experimental,10,NA,NA,1.328,1.061

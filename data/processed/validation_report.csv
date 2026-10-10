@@ -1,0 +1,8 @@
+check,result,detail
+Part II/III tubes total 12.0 mL,passed,17 tubes
+Part I standards total 3.0 mL,passed,8 preparations
+"Time points in design (2, 4, 6, 8, 10 min)",passed,160 observations
+Absorbance readings within plausible range,passed,"155 progress-curve readings within range; 1 standard-curve reading above 3 A (3.236 A, near the instrument's linear limit)"
+Missing readings,flagged,Experimental Part III (+IPTG) E
+Spectrum tube reading equals mapped standard (manual tube 4),passed,1.723 at 415 nm in both tables
+Transcriptions against course source files,passed,transcription verified value by value against the course's source files

@@ -1,0 +1,8 @@
+{
+  "name": "experiment-2-submission-builder",
+  "private": true,
+  "description": "Builds report/experiment_2_submission.docx from the assembled Markdown (run from the project root: node report/build_submission_docx.js)",
+  "dependencies": {
+    "docx": "^9.7.1"
+  }
+}

@@ -1,0 +1,18 @@
+condition,tube,dataset_reference,dataset_experimental,V0_dA415_per_min_reference,V0_dA415_per_min_experimental,V0_estimator_reference,V0_estimator_experimental,a415_10min_reference,a415_10min_experimental,ratio_experimental_over_reference,condition_label
+enzyme_dilution,A,Reference Part II,Experimental Part II,0.13599999999999995,0.14279999999999998,regression 2-6 min,regression 2-8 min,1.407,1.328,1.0500000000000003,Enzyme dilution (Part II)
+enzyme_dilution,B,Reference Part II,Experimental Part II,0.10405,0.08499999999999999,regression 2-10 min,regression 2-10 min,1.084,0.86,0.8169149447381066,Enzyme dilution (Part II)
+enzyme_dilution,C,Reference Part II,Experimental Part II,0.08200000000000002,0.06089999999999999,regression 2-6 min,regression 2-8 min,0.736,0.583,0.742682926829268,Enzyme dilution (Part II)
+enzyme_dilution,D,Reference Part II,Experimental Part II,0.02425,0.02749999999999999,regression 2-6 min,regression 2-10 min,0.262,0.283,1.1340206185567006,Enzyme dilution (Part II)
+enzyme_dilution,E,Reference Part II,Experimental Part II,0.0229,0.01974999999999999,regression 2-10 min,regression 2-10 min,0.248,0.205,0.8624454148471611,Enzyme dilution (Part II)
+mm_no_inhibitor,A,Reference Part III (-IPTG),Experimental Part III (-IPTG),0.132,0.11264999999999996,regression 2-10 min,regression 2-8 min,1.328,1.061,0.8534090909090906,"ONPG series, no inhibitor"
+mm_no_inhibitor,B,Reference Part III (-IPTG),Experimental Part III (-IPTG),0.101,0.1055,0-2 min secant (no initial linear portion),regression 2-10 min,0.723,1.065,1.0445544554455444,"ONPG series, no inhibitor"
+mm_no_inhibitor,C,Reference Part III (-IPTG),Experimental Part III (-IPTG),0.078,0.08935,0-2 min secant (no initial linear portion),regression 2-8 min,0.468,0.88,1.1455128205128204,"ONPG series, no inhibitor"
+mm_no_inhibitor,D,Reference Part III (-IPTG),Experimental Part III (-IPTG),0.055,0.08725,0-2 min secant (no initial linear portion),regression 2-6 min,0.301,0.764,1.5863636363636362,"ONPG series, no inhibitor"
+mm_no_inhibitor,E,Reference Part III (-IPTG),Experimental Part III (-IPTG),0.058,0.0555,0-2 min secant (no initial linear portion),0-2 min secant (no initial linear portion),0.18,0.346,0.9568965517241379,"ONPG series, no inhibitor"
+mm_no_inhibitor,F,Reference Part III (-IPTG),NA,0.0235,NA,0-2 min secant (no initial linear portion),NA,0.09,NA,NA,"ONPG series, no inhibitor"
+mm_plus_iptg,A,Reference Part III (+IPTG),Experimental Part III (+IPTG),0.099,0.07709999999999999,0-2 min secant (no initial linear portion),regression 2-10 min,0.966,0.78,0.7787878787878786,ONPG series + IPTG
+mm_plus_iptg,B,Reference Part III (+IPTG),Experimental Part III (+IPTG),0.03275,0.12099999999999998,regression 2-6 min,regression 2-8 min,0.294,1.106,3.694656488549618,ONPG series + IPTG
+mm_plus_iptg,C,Reference Part III (+IPTG),Experimental Part III (+IPTG),0.02075,0.04100000000000001,regression 2-6 min,regression 2-6 min,0.187,0.362,1.9759036144578317,ONPG series + IPTG
+mm_plus_iptg,D,Reference Part III (+IPTG),Experimental Part III (+IPTG),0.0087,0.01815,regression 2-10 min,regression 2-10 min,0.099,0.188,2.086206896551724,ONPG series + IPTG
+mm_plus_iptg,E,Reference Part III (+IPTG),NA,0.00615,NA,regression 2-10 min,NA,0.069,NA,NA,ONPG series + IPTG
+mm_plus_iptg,F,Reference Part III (+IPTG),NA,0.0031,NA,regression 2-10 min,NA,0.036,NA,NA,ONPG series + IPTG

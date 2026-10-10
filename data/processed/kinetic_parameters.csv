@@ -1,0 +1,5 @@
+method,n,Km,Vmax,lb_slope,lb_intercept,lb_slope_se,lb_intercept_se,r2,Km_se,Vmax_se,converged,physical,at_bound,intercept_p,condition,tubes,estimator,primary_method,condition_label,V0_units
+Lineweaver-Burk,6,0.3136061527838477,0.47687839837788515,0.6576228947475657,2.0969706394785907,0.09146758779747569,0.6270977544136536,0.9281757941927421,NA,NA,TRUE,TRUE,FALSE,0.02873053577225647,mm_no_inhibitor,ABCDEF,P: two-tier rule (primary),TRUE,No inhibitor,umol/min per 12 mL assay
+Nonlinear MM,6,0.3629261430493855,0.49378624440584706,NA,NA,NA,NA,0.9190118318830026,0.12781380241532547,0.059005400800885496,TRUE,TRUE,FALSE,NA,mm_no_inhibitor,ABCDEF,P: two-tier rule (primary),FALSE,No inhibitor,umol/min per 12 mL assay
+Lineweaver-Burk,6,1.7571432474171917,0.2817488297325009,6.236559168978503,3.549260527361991,0.3395396852565037,2.3278691314143134,0.988282576694499,NA,NA,TRUE,TRUE,FALSE,0.20202319706873892,mm_plus_iptg,ABCDEF,P: two-tier rule (primary),TRUE,+ 0.458 mM IPTG,umol/min per 12 mL assay
+Nonlinear MM,6,NA,NA,NA,NA,NA,NA,0.9615043657685994,NA,NA,TRUE,FALSE,TRUE,NA,mm_plus_iptg,ABCDEF,P: two-tier rule (primary),FALSE,+ 0.458 mM IPTG,umol/min per 12 mL assay

@@ -1,0 +1,9 @@
+reported_tube,abs_415nm,manual_tube,onp_ml,z_buffer_ml,na2co3_ml,mapping_basis
+1,0.000,Blank,0.00,2.00,1.0,"Reported as tube 1 with OD 0; the instructor confirmed it is the zero-concentration point (blank-like preparation, read against itself)"
+2,0.428,1,0.25,1.75,1.0,"Next reported reading; mapping consistent with Beer-Lambert ratio A/[ONP] = 5.1 per mM"
+3,0.856,2,0.50,1.50,1.0,"A/[ONP] = 5.1 per mM"
+4,1.240,3,0.75,1.25,1.0,"A/[ONP] = 5.0 per mM"
+5,1.723,4,1.00,1.00,1.0,"Identical to the spectrum reading of manual tube 4 at 415 nm (1.723), which anchors the mapping"
+6,2.256,5,1.30,0.70,1.0,"A/[ONP] = 5.2 per mM"
+7,3.236,6,1.60,0.40,1.0,"A/[ONP] = 6.1 per mM; highest reported reading"
+NA,NA,7,2.00,0.00,1.0,"Not in the reported table (0.667 mM); unknown whether this standard was not prepared or not reported"

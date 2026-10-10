@@ -1,0 +1,16 @@
+epsilon = 5.2224 +/- 0.1035, intercept -0.0224, R2 0.99882; through-origin 5.1507
+6th standard predicted 2.763 vs observed 3.236 (+17.1%)
+eps all 6 standards: [ 6.00782653 -0.17918119]
+eps 5 standards + zero point: [ 5.18564063 -0.01091296]
+noI ['A:0.1320(reg2-10)', 'B:0.1010(secant0-2)', 'C:0.0780(secant0-2)', 'D:0.0550(secant0-2)', 'E:0.0580(secant0-2)', 'F:0.0235(secant0-2)']
+I ['A:0.0990(secant0-2)', 'B:0.0327(reg2-6)', 'C:0.0207(reg2-6)', 'D:0.0087(reg2-10)', 'E:0.0062(reg2-10)', 'F:0.0031(reg2-10)']
+conversion factor umol/min per dA/min = 3.4467
+LB noI: Km 0.3136 Vmax 0.4769 slope 0.6576 intercept 2.0970 (SE 0.627, p 0.029) R2 0.9282
+LB I: Km 1.7571 Vmax 0.2817 slope 6.2366 intercept 3.5493 (SE 2.328, p 0.202) R2 0.9883
+Ki (competitive eq) = 0.0996
+NLS noI: [0.4937854  0.36292412] [0.05900442 0.12781024]
+NLS +I: [ 14.61364812 100.        ] [ 196.62071602 1370.68875829]
+global competitive: [0.52850042 0.43511944 0.10712792] [0.07201191 0.16614174 0.04176459] RSS 0.01941175703680793 AIC(k=4) -69.12139616127324
+global mixed: [5.28552095e-01 4.35235389e-01 1.07197722e-01 5.00000000e+02] RSS 0.019423576232021098 AIC(k=5) -67.1140919702184
+global noncompetitive: [0.6262254  0.74371596 0.43330366] [0.13882348 0.38230635 0.18059022] RSS 0.03712873567625789 AIC(k=4) -61.339248549199
+separate uninhibited MM RSS 0.006998632171066073

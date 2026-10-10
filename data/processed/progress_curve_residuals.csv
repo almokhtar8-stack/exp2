@@ -1,0 +1,156 @@
+data_role,dataset,condition,tube,time_min,absorbance_415nm,fitted,residual,used_in_fit,curved
+experimental,Experimental Part II,enzyme_dilution,A,2,0.276,0.2651,0.01090000000000002,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,A,4,0.544,0.5507,-0.006699999999999928,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,A,6,0.817,0.8362999999999999,-0.019299999999999984,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,A,8,1.137,1.1219,0.015100000000000113,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,A,10,1.328,1.4075,-0.0794999999999999,FALSE,FALSE
+experimental,Experimental Part II,enzyme_dilution,B,2,0.18,0.1842000000000001,-0.00420000000000012,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,B,4,0.354,0.35420000000000007,-2.00000000000089e-4,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,B,6,0.533,0.5242000000000001,0.008799999999999919,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,B,8,0.694,0.6942,-2.00000000000089e-4,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,B,10,0.86,0.8642,-0.0041999999999999815,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,C,2,0.133,0.13280000000000003,1.9999999999997797e-4,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,C,4,0.255,0.25460000000000005,3.9999999999995595e-4,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,C,6,0.375,0.3764,-0.0014000000000000123,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,C,8,0.499,0.4982,8.000000000000229e-4,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,C,10,0.583,0.6199999999999999,-0.03699999999999992,FALSE,FALSE
+experimental,Experimental Part II,enzyme_dilution,D,2,0.065,0.06600000000000004,-0.0010000000000000425,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,D,4,0.121,0.12100000000000002,-2.7755575615628914e-17,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,D,6,0.176,0.17600000000000002,-2.7755575615628914e-17,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,D,8,0.235,0.231,0.003999999999999976,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,D,10,0.283,0.286,-0.0030000000000000027,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,E,2,0.047,0.04860000000000007,-0.0016000000000000666,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,E,4,0.09,0.08810000000000005,0.0018999999999999434,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,E,6,0.127,0.12760000000000005,-6.000000000000449e-4,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,E,8,0.169,0.16710000000000003,0.001899999999999985,TRUE,FALSE
+experimental,Experimental Part II,enzyme_dilution,E,10,0.205,0.2066,-0.001600000000000018,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2,0.163,0.16540000000000024,-0.0024000000000002353,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,4,0.32,0.3196000000000002,3.999999999997894e-4,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,6,0.478,0.47380000000000017,0.004199999999999815,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,8,0.628,0.6280000000000002,-2.220446049250313e-16,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,10,0.78,0.7822000000000002,-0.002200000000000202,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,2,0.269,0.26650000000000007,0.0024999999999999467,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,4,0.506,0.5085,-0.0024999999999999467,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,6,0.748,0.7505,-0.0024999999999999467,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,8,0.995,0.9924999999999999,0.0025000000000000577,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,10,1.106,1.2344999999999997,-0.12849999999999961,FALSE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,2,0.08,0.07866666666666662,0.0013333333333333808,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,4,0.158,0.16066666666666665,-0.0026666666666666505,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,6,0.244,0.24266666666666667,0.0013333333333333253,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,8,0.304,0.32466666666666666,-0.020666666666666667,FALSE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,10,0.362,0.4066666666666667,-0.04466666666666669,FALSE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,2,0.041,0.04300000000000005,-0.0020000000000000503,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,4,0.082,0.07930000000000005,0.0026999999999999524,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,6,0.116,0.11560000000000005,3.9999999999995595e-4,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,8,0.151,0.15190000000000003,-9.000000000000397e-4,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,10,0.188,0.18820000000000003,-2.0000000000003348e-4,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,2,0.259,0.2553000000000002,0.0036999999999998145,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,4,0.48,0.48060000000000014,-6.00000000000156e-4,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,6,0.696,0.7059000000000001,-0.009900000000000131,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,8,0.938,0.9312,0.006799999999999917,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,10,1.061,1.1564999999999999,-0.09549999999999992,FALSE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,2,0.224,0.2268000000000001,-0.002800000000000108,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,4,0.436,0.4378000000000001,-0.0018000000000000793,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,6,0.655,0.6488000000000002,0.006199999999999872,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,8,0.864,0.8598000000000001,0.0041999999999998705,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,10,1.065,1.0708,-0.005800000000000027,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,2,0.2,0.20170000000000002,-0.001700000000000007,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,4,0.388,0.3804,0.007599999999999996,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,6,0.549,0.5591,-0.010099999999999998,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,8,0.742,0.7378,0.0041999999999999815,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,10,0.88,0.9165,-0.03649999999999998,FALSE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,2,0.202,0.20516666666666658,-0.0031666666666665677,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,4,0.386,0.37966666666666654,0.0063333333333334685,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,6,0.551,0.5541666666666666,-0.00316666666666654,TRUE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,8,0.674,0.7286666666666666,-0.05466666666666653,FALSE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,10,0.764,0.9031666666666666,-0.13916666666666655,FALSE,FALSE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,2,0.111,0.111,0,TRUE,TRUE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,4,0.201,0.222,-0.02099999999999999,FALSE,TRUE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,6,0.249,0.333,-0.08400000000000002,FALSE,TRUE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,8,0.301,0.444,-0.14300000000000002,FALSE,TRUE
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,10,0.346,0.555,-0.20900000000000007,FALSE,TRUE
+reference,Reference Part II,enzyme_dilution,A,2,0.332,0.3313333333333334,6.666666666665932e-4,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,A,4,0.602,0.6033333333333334,-0.0013333333333334085,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,A,6,0.876,0.8753333333333333,6.666666666667043e-4,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,A,8,0.965,1.147333333333333,-0.18233333333333313,FALSE,FALSE
+reference,Reference Part II,enzyme_dilution,A,10,1.407,1.419333333333333,-0.012333333333332863,FALSE,FALSE
+reference,Reference Part II,enzyme_dilution,B,2,0.245,0.2590000000000002,-0.014000000000000179,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,B,4,0.487,0.4671000000000002,0.019899999999999807,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,B,6,0.67,0.6752000000000002,-0.0052000000000002045,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,B,8,0.89,0.8833000000000002,0.006699999999999817,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,B,10,1.084,1.0914000000000001,-0.007400000000000073,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,C,2,0.171,0.1663333333333333,0.004666666666666708,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,C,4,0.321,0.3303333333333333,-0.009333333333333305,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,C,6,0.499,0.49433333333333335,0.004666666666666652,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,C,8,0.592,0.6583333333333334,-0.06633333333333347,FALSE,FALSE
+reference,Reference Part II,enzyme_dilution,C,10,0.736,0.8223333333333335,-0.08633333333333348,FALSE,FALSE
+reference,Reference Part II,enzyme_dilution,D,2,0.07,0.06716666666666665,0.0028333333333333544,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,D,4,0.11,0.11566666666666665,-0.005666666666666653,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,D,6,0.167,0.16416666666666668,0.0028333333333333266,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,D,8,0.229,0.21266666666666667,0.01633333333333334,FALSE,FALSE
+reference,Reference Part II,enzyme_dilution,D,10,0.262,0.26116666666666666,8.333333333333526e-4,FALSE,FALSE
+reference,Reference Part II,enzyme_dilution,E,2,0.063,0.06380000000000002,-8.000000000000229e-4,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,E,4,0.11,0.10960000000000003,3.999999999999698e-4,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,E,6,0.158,0.1554,0.002599999999999991,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,E,8,0.198,0.20120000000000002,-0.0032000000000000084,TRUE,FALSE
+reference,Reference Part II,enzyme_dilution,E,10,0.248,0.24700000000000003,9.999999999999731e-4,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,2,0.198,0.198,0,TRUE,TRUE
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,4,0.48,0.396,0.08399999999999996,FALSE,TRUE
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,6,0.586,0.5940000000000001,-0.008000000000000118,FALSE,TRUE
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,8,0.784,0.792,-0.008000000000000007,FALSE,TRUE
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,10,0.966,0.99,-0.02400000000000002,FALSE,TRUE
+reference,Reference Part III (+IPTG),mm_plus_iptg,B,2,0.065,0.06383333333333333,0.001166666666666677,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,B,4,0.127,0.12933333333333333,-0.002333333333333326,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,B,6,0.196,0.19483333333333333,0.001166666666666677,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,B,8,0.239,0.2603333333333333,-0.021333333333333315,FALSE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,B,10,0.294,0.3258333333333333,-0.031833333333333325,FALSE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,C,2,0.045,0.04483333333333332,1.6666666666667607e-4,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,C,4,0.086,0.08633333333333333,-3.3333333333333826e-4,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,C,6,0.128,0.12783333333333333,1.6666666666667607e-4,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,C,8,0.154,0.16933333333333334,-0.015333333333333338,FALSE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,C,10,0.187,0.21083333333333334,-0.023833333333333345,FALSE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,D,2,0.029,0.03160000000000001,-0.0026000000000000086,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,D,4,0.051,0.04900000000000001,0.001999999999999988,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,D,6,0.068,0.06640000000000001,0.0015999999999999903,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,D,8,0.085,0.08380000000000001,0.0011999999999999927,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,D,10,0.099,0.10120000000000001,-0.0022000000000000075,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,E,2,0.02,0.021600000000000008,-0.0016000000000000077,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,E,4,0.035,0.033900000000000007,0.0010999999999999968,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,E,6,0.047,0.046200000000000005,7.999999999999952e-4,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,E,8,0.06,0.05850000000000001,0.0014999999999999875,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,E,10,0.069,0.0708,-0.001799999999999996,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,F,2,0.011,0.011999999999999999,-9.999999999999992e-4,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,F,4,0.019,0.0182,7.999999999999986e-4,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,F,6,0.025,0.0244,5.999999999999998e-4,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,F,8,0.031,0.030600000000000002,3.999999999999976e-4,TRUE,FALSE
+reference,Reference Part III (+IPTG),mm_plus_iptg,F,10,0.036,0.036800000000000006,-8.00000000000009e-4,TRUE,FALSE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2,0.282,0.2850000000000001,-0.0030000000000001137,TRUE,FALSE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,A,4,0.546,0.5490000000000002,-0.0030000000000001137,TRUE,FALSE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,A,6,0.815,0.8130000000000002,0.0019999999999997797,TRUE,FALSE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,A,8,1.094,1.0770000000000002,0.016999999999999904,TRUE,FALSE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,A,10,1.328,1.3410000000000002,-0.013000000000000123,TRUE,FALSE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,2,0.202,0.202,0,TRUE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,4,0.383,0.404,-0.02100000000000002,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,6,0.516,0.6060000000000001,-0.09000000000000008,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,8,0.628,0.808,-0.18000000000000005,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,10,0.723,1.01,-0.28700000000000003,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,2,0.156,0.156,0,TRUE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,4,0.278,0.312,-0.033999999999999975,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,6,0.357,0.46799999999999997,-0.11099999999999999,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,8,0.425,0.624,-0.199,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,10,0.468,0.78,-0.312,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,2,0.11,0.11,0,TRUE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,4,0.172,0.22,-0.048000000000000015,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,6,0.211,0.33,-0.11900000000000002,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,8,0.24,0.44,-0.2,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,10,0.301,0.55,-0.24900000000000005,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,2,0.116,0.116,0,TRUE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,4,0.148,0.232,-0.08400000000000002,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,6,0.166,0.34800000000000003,-0.18200000000000002,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,8,0.171,0.464,-0.29300000000000004,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,10,0.18,0.5800000000000001,-0.4000000000000001,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,2,0.047,0.047,0,TRUE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,4,0.067,0.094,-0.026999999999999996,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,6,0.077,0.14100000000000001,-0.06400000000000002,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,8,0.084,0.188,-0.104,FALSE,TRUE
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,10,0.09,0.235,-0.145,FALSE,TRUE

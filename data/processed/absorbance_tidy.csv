@@ -1,0 +1,161 @@
+data_role,dataset,source_label,condition,tube,time_min,absorbance_415nm,note,z_buffer_ml,onpg_ml,iptg_ml,enzyme_ml,onpg_mM,iptg_mM,rel_enzyme,condition_label,measured,curve_id,abs_flag
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,A,2,0.332,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Reference Part II A,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,A,4,0.602,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Reference Part II A,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,A,6,0.876,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Reference Part II A,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,A,8,0.965,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Reference Part II A,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,A,10,1.407,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Reference Part II A,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,B,2,0.245,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Reference Part II B,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,B,4,0.487,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Reference Part II B,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,B,6,0.67,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Reference Part II B,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,B,8,0.89,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Reference Part II B,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,B,10,1.084,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Reference Part II B,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,C,2,0.171,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Reference Part II C,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,C,4,0.321,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Reference Part II C,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,C,6,0.499,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Reference Part II C,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,C,8,0.592,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Reference Part II C,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,C,10,0.736,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Reference Part II C,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,D,2,0.07,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Reference Part II D,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,D,4,0.11,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Reference Part II D,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,D,6,0.167,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Reference Part II D,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,D,8,0.229,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Reference Part II D,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,D,10,0.262,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Reference Part II D,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,E,2,0.063,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Reference Part II E,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,E,4,0.11,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Reference Part II E,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,E,6,0.158,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Reference Part II E,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,E,8,0.198,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Reference Part II E,ok
+reference,Reference Part II,"Day1_PartI docx, enzyme-dilution table",enzyme_dilution,E,10,0.248,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Reference Part II E,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,A,2,0.198,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) A,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,A,4,0.48,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) A,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,A,6,0.586,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) A,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,A,8,0.784,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) A,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,A,10,0.966,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) A,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,B,2,0.065,NA,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) B,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,B,4,0.127,NA,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) B,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,B,6,0.196,NA,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) B,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,B,8,0.239,NA,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) B,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,B,10,0.294,NA,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) B,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,C,2,0.045,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) C,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,C,4,0.086,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) C,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,C,6,0.128,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) C,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,C,8,0.154,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) C,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,C,10,0.187,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) C,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,D,2,0.029,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) D,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,D,4,0.051,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) D,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,D,6,0.068,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) D,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,D,8,0.085,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) D,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,D,10,0.099,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) D,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,E,2,0.02,NA,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) E,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,E,4,0.035,NA,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) E,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,E,6,0.047,NA,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) E,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,E,8,0.06,NA,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) E,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,E,10,0.069,NA,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) E,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,F,2,0.011,NA,10.55,0.25,1,0.2,0.06874999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) F,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,F,4,0.019,NA,10.55,0.25,1,0.2,0.06874999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) F,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,F,6,0.025,NA,10.55,0.25,1,0.2,0.06874999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) F,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,F,8,0.031,NA,10.55,0.25,1,0.2,0.06874999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) F,ok
+reference,Reference Part III (+IPTG),"Day2 pptx, '+ IPTG' table",mm_plus_iptg,F,10,0.036,NA,10.55,0.25,1,0.2,0.06874999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Reference Part III (+IPTG) F,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,A,2,0.282,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) A,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,A,4,0.546,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) A,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,A,6,0.815,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) A,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,A,8,1.094,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) A,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,A,10,1.328,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) A,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,B,2,0.202,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) B,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,B,4,0.383,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) B,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,B,6,0.516,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) B,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,B,8,0.628,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) B,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,B,10,0.723,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) B,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,C,2,0.156,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) C,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,C,4,0.278,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) C,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,C,6,0.357,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) C,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,C,8,0.425,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) C,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,C,10,0.468,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) C,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,D,2,0.11,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) D,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,D,4,0.172,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) D,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,D,6,0.211,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) D,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,D,8,0.24,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) D,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,D,10,0.301,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) D,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,E,2,0.116,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) E,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,E,4,0.148,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) E,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,E,6,0.166,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) E,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,E,8,0.171,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) E,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,E,10,0.18,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) E,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,F,2,0.047,NA,11.55,0.25,0,0.2,0.06874999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) F,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,F,4,0.067,NA,11.55,0.25,0,0.2,0.06874999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) F,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,F,6,0.077,NA,11.55,0.25,0,0.2,0.06874999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) F,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,F,8,0.084,NA,11.55,0.25,0,0.2,0.06874999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) F,ok
+reference,Reference Part III (-IPTG),"Day2 pptx, 'No IPTG' table",mm_no_inhibitor,F,10,0.09,NA,11.55,0.25,0,0.2,0.06874999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Reference Part III (-IPTG) F,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,A,2,0.276,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Experimental Part II A,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,A,4,0.544,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Experimental Part II A,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,A,6,0.817,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Experimental Part II A,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,A,8,1.137,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Experimental Part II A,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,A,10,1.328,NA,3.8,8,0,0.2,2.1999999999999997,0,1,Enzyme dilution (Part II),TRUE,Experimental Part II A,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,B,2,0.18,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Experimental Part II B,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,B,4,0.354,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Experimental Part II B,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,B,6,0.533,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Experimental Part II B,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,B,8,0.694,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Experimental Part II B,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,B,10,0.86,NA,3.85,8,0,0.15,2.1999999999999997,0,0.7499999999999999,Enzyme dilution (Part II),TRUE,Experimental Part II B,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,C,2,0.133,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Experimental Part II C,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,C,4,0.255,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Experimental Part II C,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,C,6,0.375,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Experimental Part II C,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,C,8,0.499,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Experimental Part II C,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,C,10,0.583,NA,3.9,8,0,0.1,2.1999999999999997,0,0.5,Enzyme dilution (Part II),TRUE,Experimental Part II C,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,D,2,0.065,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Experimental Part II D,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,D,4,0.121,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Experimental Part II D,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,D,6,0.176,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Experimental Part II D,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,D,8,0.235,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Experimental Part II D,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,D,10,0.283,NA,3.95,8,0,0.05,2.1999999999999997,0,0.25,Enzyme dilution (Part II),TRUE,Experimental Part II D,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,E,2,0.047,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Experimental Part II E,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,E,4,0.09,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Experimental Part II E,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,E,6,0.127,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Experimental Part II E,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,E,8,0.169,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Experimental Part II E,ok
+experimental,Experimental Part II,Day 1,enzyme_dilution,E,10,0.205,NA,3.97,8,0,0.03,2.1999999999999997,0,0.15,Enzyme dilution (Part II),TRUE,Experimental Part II E,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,A,2,0.163,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) A,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,A,4,0.32,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) A,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,A,6,0.478,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) A,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,A,8,0.628,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) A,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,A,10,0.78,NA,2.8,8,1,0.2,2.1999999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) A,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,B,2,0.269,NA,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) B,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,B,4,0.506,NA,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) B,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,B,6,0.748,NA,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) B,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,B,8,0.995,NA,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) B,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,B,10,1.106,Potential late-point timing/handling anomaly at 10 min; keep raw value,6.8,4,1,0.2,1.0999999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) B,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,C,2,0.08,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) C,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,C,4,0.158,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) C,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,C,6,0.244,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) C,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,C,8,0.304,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) C,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,C,10,0.362,NA,8.8,2,1,0.2,0.5499999999999999,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) C,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,D,2,0.041,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) D,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,D,4,0.082,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) D,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,D,6,0.116,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) D,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,D,8,0.151,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) D,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,D,10,0.188,NA,9.8,1,1,0.2,0.27499999999999997,0.4583333333333333,NA,ONPG series + IPTG,TRUE,Experimental Part III (+IPTG) D,ok
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,E,2,NA,Missing: sample discarded before spectrophotometer measurement,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,FALSE,Experimental Part III (+IPTG) E,missing
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,E,4,NA,Missing: sample discarded before spectrophotometer measurement,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,FALSE,Experimental Part III (+IPTG) E,missing
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,E,6,NA,Missing: sample discarded before spectrophotometer measurement,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,FALSE,Experimental Part III (+IPTG) E,missing
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,E,8,NA,Missing: sample discarded before spectrophotometer measurement,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,FALSE,Experimental Part III (+IPTG) E,missing
+experimental,Experimental Part III (+IPTG),Day 2 Black,mm_plus_iptg,E,10,NA,Missing: sample discarded before spectrophotometer measurement,10.3,0.5,1,0.2,0.13749999999999998,0.4583333333333333,NA,ONPG series + IPTG,FALSE,Experimental Part III (+IPTG) E,missing
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,A,2,0.259,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) A,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,A,4,0.48,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) A,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,A,6,0.696,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) A,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,A,8,0.938,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) A,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,A,10,1.061,NA,3.8,8,0,0.2,2.1999999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) A,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,B,2,0.224,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) B,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,B,4,0.436,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) B,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,B,6,0.655,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) B,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,B,8,0.864,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) B,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,B,10,1.065,NA,7.8,4,0,0.2,1.0999999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) B,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,C,2,0.2,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) C,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,C,4,0.388,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) C,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,C,6,0.549,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) C,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,C,8,0.742,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) C,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,C,10,0.88,NA,9.8,2,0,0.2,0.5499999999999999,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) C,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,D,2,0.202,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) D,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,D,4,0.386,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) D,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,D,6,0.551,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) D,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,D,8,0.674,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) D,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,D,10,0.764,NA,10.8,1,0,0.2,0.27499999999999997,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) D,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,E,2,0.111,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) E,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,E,4,0.201,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) E,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,E,6,0.249,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) E,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,E,8,0.301,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) E,ok
+experimental,Experimental Part III (-IPTG),Day 2 Blue,mm_no_inhibitor,E,10,0.346,NA,11.3,0.5,0,0.2,0.13749999999999998,0,NA,"ONPG series, no inhibitor",TRUE,Experimental Part III (-IPTG) E,ok

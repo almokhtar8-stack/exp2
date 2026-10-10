@@ -1,0 +1,16 @@
+source_label,tube,label_ink,instrument,firmware,serial,instrument_clock,wavelength_nm,samples_on_printout,photo_file,verification
+Day 1,A,red,GENESYS 10S UV-Vis,v4.006,2L6S357212,9:45pm 7Sep26,415.0,5,Day1_A.jpeg,all five values match CSV
+Day 1,B,red,GENESYS 10S UV-Vis,v4.006,2L6S357212,9:54pm 7Sep26,415.0,5,Day1_B.jpeg,all five values match CSV (photo was taken upside down; the file is stored rotated 180° for legibility)
+Day 1,C,red,GENESYS 10S UV-Vis,v4.006,2L6S357212,9:58pm 7Sep26,415.0,5,Day1_C.jpeg,all five values match CSV
+Day 1,D,red,GENESYS 10S UV-Vis,v4.006,2L6S357212,10:04pm 7Sep26,415.0,5,Day1_D.jpeg,all five values match CSV
+Day 1,E,red,GENESYS 10S UV-Vis,v4.006,2L6S357212,10:07pm 7Sep26,415.0,5,Day1_E.jpeg,all five values match CSV
+Day 2 Blue,A,blue,GENESYS 10S UV-Vis,v4.005,2L6R296203,3:32am 11Sep26,415.0,5,Day2_Blue_A.jpeg,all five values match CSV
+Day 2 Blue,B,blue,GENESYS 10S UV-Vis,v4.005,2L6R296203,3:36am 11Sep26,415.0,5,Day2_Blue_B.jpeg,all five values match CSV
+Day 2 Blue,C,blue,GENESYS 10S UV-Vis,v4.005,2L6R296203,3:39am 11Sep26,415.0,5,Day2_Blue_C.jpeg,all five values match CSV
+Day 2 Blue,D,blue,GENESYS 10S UV-Vis,v4.005,2L6R296203,3:46am 11Sep26,415.0,5,Day2_Blue_D.jpeg,all five values match CSV
+Day 2 Blue,E,blue,GENESYS 10S UV-Vis,v4.005,2L6R296203,3:51am 11Sep26,415.0,5,Day2_Blue_E.jpeg,all five values match CSV
+Day 2 Black,A,black,GENESYS 10S UV-Vis,v4.005,2L6R296203,4:29am 11Sep26,415.0,5,Day2_Black_A.jpeg,"four values match CSV; ID 3 legible as 0.47x with last digit under glare, consistent with CSV 0.478 but not independently confirmable from the photo"
+Day 2 Black,B,black,GENESYS 10S UV-Vis,v4.005,2L6R296203,4:25am 11Sep26,415.0,5,Day2_Black_B.jpeg,all five values match CSV
+Day 2 Black,C,black,GENESYS 10S UV-Vis,v4.005,2L6R296203,4:33am 11Sep26,415.0,5,Day2_Black_C.jpeg,all five values match CSV
+Day 2 Black,D,black,GENESYS 10S UV-Vis,v4.005,2L6R296203,4:20am 11Sep26,415.0,5,Day2_Black_D.jpeg,all five values match CSV
+Day 2 Black,E,NA,NA,NA,NA,NA,NA,0,NA,no printout: sample discarded before measurement

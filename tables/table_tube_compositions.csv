@@ -1,0 +1,18 @@
+Part,Condition,Tube,Z buffer (mL),ONPG 3.3 mM (mL),IPTG 5.5 mM (mL),Enzyme (mL),[ONPG] in reaction (mM),[IPTG] in reaction (mM),Relative enzyme
+Part II,Enzyme dilution (Part II),A,3.8,8,0,0.2,2.2,0,1
+Part II,Enzyme dilution (Part II),B,3.85,8,0,0.15,2.2,0,0.75
+Part II,Enzyme dilution (Part II),C,3.9,8,0,0.1,2.2,0,0.5
+Part II,Enzyme dilution (Part II),D,3.95,8,0,0.05,2.2,0,0.25
+Part II,Enzyme dilution (Part II),E,3.97,8,0,0.03,2.2,0,0.15
+Part III,"ONPG series, no inhibitor",A,3.8,8,0,0.2,2.2,0,NA
+Part III,"ONPG series, no inhibitor",B,7.8,4,0,0.2,1.1,0,NA
+Part III,"ONPG series, no inhibitor",C,9.8,2,0,0.2,0.55,0,NA
+Part III,"ONPG series, no inhibitor",D,10.8,1,0,0.2,0.275,0,NA
+Part III,"ONPG series, no inhibitor",E,11.3,0.5,0,0.2,0.1375,0,NA
+Part III,"ONPG series, no inhibitor",F,11.55,0.25,0,0.2,0.0687,0,NA
+Part III,ONPG series + IPTG,A,2.8,8,1,0.2,2.2,0.4583,NA
+Part III,ONPG series + IPTG,B,6.8,4,1,0.2,1.1,0.4583,NA
+Part III,ONPG series + IPTG,C,8.8,2,1,0.2,0.55,0.4583,NA
+Part III,ONPG series + IPTG,D,9.8,1,1,0.2,0.275,0.4583,NA
+Part III,ONPG series + IPTG,E,10.3,0.5,1,0.2,0.1375,0.4583,NA
+Part III,ONPG series + IPTG,F,10.55,0.25,1,0.2,0.0687,0.4583,NA

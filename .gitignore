@@ -1,0 +1,26 @@
+# R session artefacts
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+Thumbs.db
+
+# Rendering intermediates of the supplementary PDF
+report/experiment_2_supplementary.html
+report/supplementary.css
+
+# Node
+node_modules/
+package-lock.json
+
+# LaTeX intermediates (the compiled PDFs are tracked)
+*.aux
+*.out
+*.toc
+*.log
+
+# Course-provided originals and private correspondence are NOT redistributed.
+# The transcribed values in data/raw/reference/*.csv are the inputs the scripts
+# use; 01_import_clean.R cross-checks them against these originals only when
+# the files are present locally.
+data/raw/reference/source_files/

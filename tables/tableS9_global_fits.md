@@ -1,0 +1,12 @@
+| Model | Parameter | Estimate | SE | RSS | AIC | n | Converged | Note |
+|---|---|---|---|---|---|---|---|---|
+| global competitive | Vmax | 0.5285 | 0.072 | 0.01941 | -35.07 | 12 | TRUE |  |
+| global competitive | Km | 0.4351 | 0.1662 | 0.01941 | -35.07 | 12 | TRUE |  |
+| global competitive | Ki | 0.1071 | 0.0418 | 0.01941 | -35.07 | 12 | TRUE |  |
+| global noncompetitive | Vmax | 0.6262 | 0.1388 | 0.03713 | -27.28 | 12 | TRUE |  |
+| global noncompetitive | Km | 0.7438 | 0.3824 | 0.03713 | -27.28 | 12 | TRUE |  |
+| global noncompetitive | Ki | 0.4333 | 0.1806 | 0.03713 | -27.28 | 12 | TRUE |  |
+| global mixed | Vmax | 0.5286 | 0.0778 | 0.01942 | -33.06 | 12 | TRUE |  |
+| global mixed | Km | 0.4352 | 0.1788 | 0.01942 | -33.06 | 12 | TRUE |  |
+| global mixed | Ki | 0.1072 | 0.0792 | 0.01942 | -33.06 | 12 | TRUE |  |
+| global mixed | Kip | 500 | 422500 | 0.01942 | -33.06 | 12 | TRUE | at upper bound (model reduces to competitive) |
