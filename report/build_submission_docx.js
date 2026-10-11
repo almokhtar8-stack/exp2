@@ -8,7 +8,8 @@ const fs = require("fs");
 const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell, WidthType,
-  AlignmentType, PageBreak, ShadingType, BorderStyle, HeadingLevel, LevelFormat, LineRuleType, ExternalHyperlink
+  AlignmentType, PageBreak, ShadingType, BorderStyle, HeadingLevel, LevelFormat, LineRuleType, ExternalHyperlink,
+  Header, Footer, PageNumber
 } = require("docx");
 
 const root = path.join(__dirname, "..");
@@ -31,7 +32,7 @@ function baseRuns(text, style) {
   const marks = [];
   for (const [re, base, sub] of SUBPAT) s = s.replace(re, () => { marks.push([base, sub]); return `\u0001${marks.length - 1}\u0002`; });
   let buf = "", mode = "n";
-  const flush = () => { if (buf) { out.push(new TextRun({ text: buf, font: FONT, size: style.size || SIZE, bold: style.bold, italics: style.italics,
+  const flush = () => { if (buf) { out.push(new TextRun({ text: buf, font: FONT, size: style.size || SIZE, bold: style.bold, italics: style.italics, smallCaps: style.smallCaps,
       subScript: mode === "sub" || undefined, superScript: mode === "sup" || undefined })); buf = ""; } };
   for (let i = 0; i < s.length; i++) {
     const ch = s[i];
@@ -98,19 +99,27 @@ function mdTable(lines) {
   const keepTogether = body.length <= 8;   // small tables stay on one page; long ones may split (header repeats)
   const cell = (txt, j, isHead, keepNext) => new TableCell({
     width: { size: widths[j], type: WidthType.DXA },
-    shading: isHead ? { type: ShadingType.CLEAR, fill: "F4F1FA", color: "auto" } : undefined,
+    borders: { top: isHead ? rule(8) : noRule, bottom: isHead ? rule(4) : noRule, left: noRule, right: noRule },
     margins: { top: 15, bottom: 15, left: 60, right: 60 },
     children: [new Paragraph({ children: inlineRuns(show(txt), { size: tsize, bold: isHead }), alignment: AlignmentType.LEFT, spacing: { line: 240, after: 0 }, keepNext })]
   });
   const headerEmpty = header.every(h => h.trim() === "");
   const rowsOut = headerEmpty ? [] : [new TableRow({ tableHeader: true, cantSplit: true, children: header.map((h, j) => cell(h, j, true, keepTogether)) })];
   body.forEach((r, k) => rowsOut.push(new TableRow({ cantSplit: true, children: header.map((_, j) => cell(r[j] || "", j, j === 0 && headerEmpty, keepTogether && k < body.length - 1)) })));
-  return new Table({ width: { size: TEXT_W, type: WidthType.DXA }, columnWidths: widths, rows: rowsOut });
+  // journal convention: a rule above the header, a thin rule below it and a rule under the last row; no vertical lines
+  if (rowsOut.length) rowsOut[rowsOut.length - 1] = new TableRow({ cantSplit: true, children: (body.length ? body[body.length - 1] : header).map((t, j) =>
+    new TableCell({ width: { size: widths[j], type: WidthType.DXA }, borders: { top: noRule, bottom: rule(8), left: noRule, right: noRule },
+      margins: { top: 15, bottom: 15, left: 60, right: 60 },
+      children: [new Paragraph({ children: inlineRuns(show(t), { size: tsize, bold: headerEmpty && j === 0 }), alignment: AlignmentType.LEFT, spacing: { line: 240, after: 0 } })] })) });
+  return new Table({ width: { size: TEXT_W, type: WidthType.DXA }, columnWidths: widths, rows: rowsOut,
+    borders: { top: noRule, bottom: noRule, left: noRule, right: noRule, insideHorizontal: noRule, insideVertical: noRule } });
 }
+const rule = sz => ({ style: BorderStyle.SINGLE, size: sz, color: "000000" });
+const noRule = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
 
 // ---------- parse markdown ----------
 const children = [];
-let i = 0, inCover = true, imageRow = [];
+let i = 0, inCover = true, imageRow = [], inSummary = false, summaryParas = [];
 const flushImages = () => {
   if (!imageRow.length) return;
   // printout photographs: rows of three, 2.05 in wide each
@@ -135,13 +144,20 @@ while (i < md.length) {
     let nxt = i; while (nxt < md.length && md[nxt].trim() === "") nxt++;
     if (!(nxt < md.length && md[nxt].startsWith("## "))) children.push(new Paragraph({ children: [new TextRun({ text: "", size: 4 })], spacing: { before: 0, after: 80, line: 40, lineRule: LineRuleType.EXACT } }));
     continue; }
-  if (line.startsWith("# ")) { children.push(new Paragraph({ children: inlineRuns(line.slice(2), { bold: true, size: 28 }), alignment: AlignmentType.CENTER, spacing: { line: LINE, after: 240, before: 1200 } })); i++; continue; }
+  if (line.startsWith("# ")) {
+    // cover: a small university logo (affiliation only), then the title with a rule beneath it
+    const logo = path.join(__dirname, "assets", "kaust_logo.png");
+    if (fs.existsSync(logo)) children.push(imagePara("assets/kaust_logo.png", 1.35, AlignmentType.LEFT));
+    children.push(new Paragraph({ children: inlineRuns(line.slice(2), { bold: true, size: 30 }), alignment: AlignmentType.LEFT,
+      spacing: { line: 300, after: 160, before: 360 }, border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "5B21B6", space: 6 } } }));
+    i++; continue; }
   if (line.startsWith("## ")) {
     flushImages();
     const title = line.slice(3);
     const breakBefore = ["Objectives", "Results", "Discussion", "Data and Code Availability", "Raw Data"].includes(title) || (inCover && title !== "Summary");
     if (title === "Objectives") inCover = false;
-    children.push(new Paragraph({ children: inlineRuns(title, { bold: true }), heading: HeadingLevel.HEADING_1, alignment: AlignmentType.LEFT,
+    if (title === "Summary") inSummary = true;
+    children.push(new Paragraph({ children: inlineRuns(title, { bold: true, smallCaps: true }), heading: HeadingLevel.HEADING_1, alignment: AlignmentType.LEFT,
       spacing: { line: LINE, before: 240, after: 120 }, pageBreakBefore: breakBefore, keepNext: true }));
     i++; continue;
   }
@@ -159,10 +175,24 @@ while (i < md.length) {
     children.push(new Paragraph({ children: inlineRuns(line), alignment: AlignmentType.LEFT, spacing: { line: LINE, after: 60 }, indent: { left: 360, hanging: 360 } })); i++; continue;
   }
   flushImages();
-  const isCaption = /^\*\*(Figure|Table) /.test(line);
+  if (inSummary) {
+    // the Summary sits in a single bordered box on the cover (one paragraph per source line)
+    const box = { style: BorderStyle.SINGLE, size: 6, color: "5B21B6" };
+    summaryParas.push(para(line, { align: AlignmentType.JUSTIFIED, after: 60 }));
+    let nxt = i + 1; while (nxt < md.length && md[nxt].trim() === "") nxt++;
+    if (nxt >= md.length || md[nxt].startsWith("## ")) {
+      children.push(new Table({ width: { size: TEXT_W, type: WidthType.DXA }, columnWidths: [TEXT_W],
+        borders: { top: box, bottom: box, left: box, right: box, insideHorizontal: noRule, insideVertical: noRule },
+        rows: [new TableRow({ children: [new TableCell({ width: { size: TEXT_W, type: WidthType.DXA }, margins: { top: 140, bottom: 80, left: 200, right: 200 }, children: summaryParas })] })] }));
+      summaryParas = []; inSummary = false;
+    }
+    i++; continue;
+  }
+  let text = line.replace(/^\*\*Figure (\w+)\./, "**FIGURE $1.").replace(/^\*\*Table (\w+)\./, "**TABLE $1.");
+  const isCaption = /^\*\*(FIGURE|TABLE) /.test(text);
   const isCoverMeta = inCover && !line.startsWith("**") && !/^Enzyme kinetics/.test(line);
-  children.push(para(line, { align: isCoverMeta ? AlignmentType.CENTER : (isCaption ? AlignmentType.LEFT : AlignmentType.JUSTIFIED), after: isCaption ? 60 : 100,
-    run: isCaption ? { size: 20 } : {}, line: isCaption ? 276 : LINE, keepNext: /^\*\*Table /.test(line) || /^Day [12] \(/.test(line), keepLines: isCaption }));
+  children.push(para(text, { align: isCoverMeta ? AlignmentType.LEFT : (isCaption ? AlignmentType.LEFT : AlignmentType.JUSTIFIED), after: isCaption ? 60 : (isCoverMeta ? 40 : 100),
+    run: isCaption ? { size: 20 } : {}, line: isCaption ? 276 : LINE, keepNext: /^\*\*TABLE /.test(text) || /^Day [12] \(/.test(line), keepLines: isCaption }));
   i++;
 }
 flushImages();
@@ -171,10 +201,17 @@ const doc = new Document({
   creator: "Almokhtar Aljarodi", lastModifiedBy: "Almokhtar Aljarodi", title: "Experiment 2: beta-galactosidase kinetics",
   styles: { default: { document: { run: { font: FONT, size: SIZE } } },
     paragraphStyles: [
-      { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true, run: { font: FONT, size: SIZE, bold: true, color: "000000" }, paragraph: { spacing: { before: 240, after: 120, line: LINE }, outlineLevel: 0 } },
+      { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true, run: { font: FONT, size: SIZE, bold: true, smallCaps: true, color: "000000" }, paragraph: { spacing: { before: 240, after: 120, line: LINE }, outlineLevel: 0 } },
       { id: "Heading2", name: "Heading 2", basedOn: "Normal", next: "Normal", quickFormat: true, run: { font: FONT, size: SIZE, bold: true, italics: true, color: "000000" }, paragraph: { spacing: { before: 120, after: 60, line: LINE }, outlineLevel: 1 } }
     ],
     characterStyles: [{ id: "Hyperlink", name: "Hyperlink", basedOn: "DefaultParagraphFont", run: { color: "0563C1", underline: { type: "single" } } }] },
-  sections: [{ properties: { page: { size: { width: PAGE_W, height: PAGE_H }, margin: { top: MARGIN, bottom: MARGIN, left: MARGIN, right: MARGIN } } }, children }]
+  sections: [{ properties: { page: { size: { width: PAGE_W, height: PAGE_H }, margin: { top: MARGIN, bottom: MARGIN, left: MARGIN, right: MARGIN, header: 720, footer: 720 } }, titlePage: true },
+    headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { line: 240, after: 0 },
+        children: [new TextRun({ text: "Experiment 2 \u00b7 \u03b2-Galactosidase kinetics with ONPG and IPTG \u00b7 A. Aljarodi", font: FONT, size: 18, italics: true, color: "444444" })] })] }),
+      first: new Header({ children: [new Paragraph({ children: [] })] }) },
+    footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { line: 240, after: 0 },
+        children: [new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: 20 })] })] }),
+      first: new Footer({ children: [new Paragraph({ children: [] })] }) },
+    children }]
 });
 Packer.toBuffer(doc).then(buf => { const out = path.join(__dirname, "experiment_2_submission.docx"); fs.writeFileSync(out, buf); console.log("wrote", out, Math.round(buf.length / 1024), "kB"); });

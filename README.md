@@ -10,7 +10,7 @@ Everything in `data/processed/`, `tables/`, `figures/` and `report/` is regenera
 
 | Term | What it is | Where it is used |
 |---|---|---|
-| **Reference dataset** | Measurements provided by the course (Prof. Samah Gadhoum, e-mail of 13 September 2026) for use in the Results section: ONP spectrum and standard curve (Part I), enzyme dilution (Part II), ONPG series without and with IPTG (Part III) | Results: calibration, initial velocities, K_m, V_max, K_m,app, V_max,app, K_i; Figures 1–4, Tables 1–5 |
+| **Reference dataset** | Measurements provided by the course (Prof. Samah Gadhoum; Parts I/II on 10 September 2026, Part III on 13 September 2026) for use in the Results section: ONP spectrum and standard curve (Part I), enzyme dilution (Part II), ONPG series without and with IPTG (Part III) | Results: calibration, initial velocities, K_m, V_max, K_m,app, V_max,app, K_i; Figures 1–4, Tables 1–5 |
 | **Experimental dataset** | Our group's own GENESYS 10S printouts (7 and 11 September 2026) | Discussion, troubleshooting, secondary analysis (Figures S1, S4; Tables S3, S7, S8), raw-data appendix |
 
 The two terms describe origin and analytical role only: the reference dataset is a course teaching dataset, not validated or published data. Each condition was measured once in both datasets, so the ± values in the reports are standard errors of fits, not replicate variation. The original labels on the source material are kept in the raw files and in the crosswalk tables (`tables/table_dataset_crosswalk.md`, `tables/table_audit_*.md`); `data/raw/README.md` is the data dictionary.

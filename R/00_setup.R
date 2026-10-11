@@ -43,7 +43,7 @@ walk(c(dir_proc, dir_fig, dir_supp, dir_tab, dir_rep), ~ dir.create(.x, showWarn
 # the reports then state that publication is pending rather than printing a placeholder URL.
 REPOSITORY_URL <- "https://github.com/almokhtar8-stack/exp2"
 
-# Dataset roles. The course instructor (e-mail of 13 September 2026) supplied
+# Dataset roles. The course instructor (Parts I/II on 10 September 2026, Part III on 13 September 2026) supplied
 # measurements for the Results section and asked that students' own results be
 # discussed in the Discussion. The two roles describe origin and analytical
 # role, not accuracy or publication status.

@@ -82,7 +82,13 @@ su <- expk |> filter(tube_B == "excluded")
 for (m in c("Lineweaver-Burk", "Nonlinear MM")) { r <- su |> filter(method == m); pre <- ifelse(m == "Lineweaver-Burk", "s_lb", "s_nl")
   vals[[paste0(pre, "_Km")]] <- r$Km; vals[[paste0(pre, "_Kmapp")]] <- r$Km_app; vals[[paste0(pre, "_Vmax")]] <- r$Vmax; vals[[paste0(pre, "_Vmaxapp")]] <- r$Vmax_app
   vals[[paste0(pre, "_Ki")]] <- r$Ki_competitive; vals[[paste0(pre, "_Vratio")]] <- r$Vmax_ratio; vals[[paste0(pre, "_Kratio")]] <- r$Km_ratio
-  vals[[paste0(pre, "_Km_se")]] <- r$Km_se; vals[[paste0(pre, "_Kmapp_se")]] <- r$Km_app_se; vals[[paste0(pre, "_n")]] <- r$n; vals[[paste0(pre, "_napp")]] <- r$n_app }
+  vals[[paste0(pre, "_Km_se")]] <- r$Km_se; vals[[paste0(pre, "_Kmapp_se")]] <- r$Km_app_se; vals[[paste0(pre, "_Vmax_se")]] <- r$Vmax_se; vals[[paste0(pre, "_n")]] <- r$n; vals[[paste0(pre, "_napp")]] <- r$n_app }
+vals$s_nl_Ki_se <- (su |> filter(method == "Nonlinear MM"))$Ki_se
+sg <- su |> filter(method == "Global nonlinear competitive")
+if (nrow(sg) == 1) { vals$s_g_Ki <- sg$Ki_competitive; vals$s_g_Ki_se <- sg$Ki_se; vals$s_g_Km <- sg$Km; vals$s_g_Km_se <- sg$Km_se; vals$s_g_Vmax <- sg$Vmax; vals$s_g_Vmax_se <- sg$Vmax_se }
+sgB <- expk |> filter(tube_B == "included", method == "Global nonlinear competitive")
+if (nrow(sgB) == 1) { vals$s_g_Ki_withB <- sgB$Ki_competitive; vals$s_g_Ki_withB_se <- sgB$Ki_se }
+tbr <- rd("experimental_tubeB_control_ratio.csv"); vals$s_B_over_control <- tbr$value[1]; vals$s_B_over_control_pct <- 100 * (tbr$value[1] - 1)
 sB <- expk |> filter(tube_B == "included", method == "Lineweaver-Burk"); vals$s_lb_Kmapp_withB <- sB$Km_app
 sBn <- expk |> filter(tube_B == "included", method == "Nonlinear MM"); vals$s_nl_Ki_withB <- sBn$Ki_competitive; vals$s_nl_Kmapp_withB <- sBn$Km_app
 for (k in seq_len(nrow(cmp))) if (!is.na(cmp$ratio_experimental_over_reference[k]))

@@ -253,7 +253,7 @@ No organisms, cell lines, or human participants were used. The enzyme was \Ecoli
 
 \subsection{Method details}
 \subsubsection{Datasets}
-Two datasets were analyzed: a course-provided reference dataset supplied by the laboratory instructor (Professor Samah Gadhoum; e-mail of 13 September 2026 directing the class to use it for the Results section) and an experimental dataset collected by our laboratory group on 7 September 2026 (Part II, tubes A\dash E) and 11 September 2026 (Part III, tubes A\dash E without IPTG, A\dash D with IPTG; tube F not performed, inhibited tube E discarded before measurement). The reference measurements were used for the primary kinetic analysis; our experimental measurements were analyzed identically and examined separately for technical interpretation and troubleshooting. The labels describe origin and analytical role, not accuracy or publication status, and the two datasets are not replicates of each other. Reference values were transcribed from the course's .docx and .pptx files and cross-checked value by value against the course's CSV files; the enzyme-dilution table absent from the CSV was transcribed from the .docx. No missing value was estimated.
+Two datasets were analyzed: a course-provided reference dataset supplied by the laboratory instructor (Professor Samah Gadhoum; Parts I/II on 10 September 2026 and Part III on 13 September 2026, with the instruction to use them for the Results section) and an experimental dataset collected by our laboratory group on 7 September 2026 (Part II, tubes A\dash E) and 11 September 2026 (Part III, tubes A\dash E without IPTG, A\dash D with IPTG; tube F not performed, inhibited tube E discarded before measurement). The reference measurements were used for the primary kinetic analysis; our experimental measurements were analyzed identically and examined separately for technical interpretation and troubleshooting. The labels describe origin and analytical role, not accuracy or publication status, and the two datasets are not replicates of each other. Reference values were transcribed from the course's .docx and .pptx files and cross-checked value by value against the course's CSV files; the enzyme-dilution table absent from the CSV was transcribed from the .docx. No missing value was estimated.
 \subsubsection{Reagents}
 Z buffer contained 0.06 M Na\textsubscript{2}HPO\textsubscript{4}, 0.04 M NaH\textsubscript{2}PO\textsubscript{4}, 0.01 M KCl, 0.001 M MgSO\textsubscript{4}, and 0.05 M β-mercaptoethanol, pH 7.0. Stocks were ONPG at 1.0 mg mL\textsuperscript{−1} (3.3 mM), IPTG at 1.31 mg mL\textsuperscript{−1} (5.5 mM), ONP at 1 mM, and Na\textsubscript{2}CO\textsubscript{3} at 1 M. All procedures followed the Experiment 2 laboratory manual\cit{11} except as noted.
 \subsubsection{Absorption spectrum and standard curve}
@@ -496,10 +496,12 @@ Same rule and units as the Results. With the anomalous inhibited tube B excluded
 \toprule
 Inhibited B & Method & \Km{} (mM) & \Kmapp{} (mM) & \Vmax & \Vmaxapp & \Vmaxapp/\Vmax & \Ki{} (mM) & \Rsq{} (−I) & \Rsq{} (+I) & Tubes (−I / +I) \\
 \midrule
-excluded & Lineweaver-Burk & 0.156 & 3.087 & 0.421 & 0.792 & 1.88 & 0.024 & 0.95 & 0.969 & ABCDE / ACD \\
-excluded & Nonlinear MM & 0.137 & 1.206 & 0.409 & 0.414 & 1.01 & 0.059 & 0.942 & 0.984 & ABCDE / ACD \\
-included & Lineweaver-Burk & 0.156 & 38.16 & 0.421 & 9.042 & 21.5 & 0.002 & 0.95 & 0.945 & ABCDE / ABCD \\
-included & Nonlinear MM & 0.137 & 0.783 & 0.409 & 0.458 & 1.12 & 0.097 & 0.942 & 0.541 & ABCDE / ABCD \\
+excluded & Lineweaver-Burk & 0.156 & 3.087 & 0.421 & 0.792 & 1.88 & 0.024 & – & 0.95 & 0.969 & ABCDE / ACD \\
+excluded & Nonlinear MM & 0.137 & 1.206 & 0.409 & 0.414 & 1.01 & 0.059 & 0.029 & 0.942 & 0.984 & ABCDE / ACD \\
+included & Lineweaver-Burk & 0.156 & 38.16 & 0.421 & 9.042 & 21.5 & 0.002 & – & 0.95 & 0.945 & ABCDE / ABCD \\
+included & Nonlinear MM & 0.137 & 0.783 & 0.409 & 0.458 & 1.12 & 0.097 & 0.215 & 0.942 & 0.541 & ABCDE / ABCD \\
+excluded & Global nonlinear competitive & 0.137 & 1.179 & 0.409 & 0.409 & 1 & 0.061 & 0.013 & 0.981 & – & ABCDE / ACD \\
+included & Global nonlinear competitive & 0.149 & 0.647 & 0.419 & 0.419 & 1 & 0.137 & 0.115 & 0.691 & – & ABCDE / ABCD \\
 \bottomrule
 \end{tabular}
 \end{table}

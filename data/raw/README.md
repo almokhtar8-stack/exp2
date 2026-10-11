@@ -6,7 +6,7 @@ The only manually entered inputs of the project. Everything under `data/processe
 
 | Term used throughout the project | Origin | Role |
 |---|---|---|
-| **Reference dataset** | Measurements provided by the course (Prof. Samah Gadhoum, e-mail of 13 September 2026) for use in the Results section: Part I (ONP spectrum, ONP standard curve), Part II (enzyme dilution) and Part III (ONPG series without and with IPTG) | Primary analysis: calibration, V₀, K_m, V_max, K_m,app, V_max,app, K_i; Figures 1–4, Tables 1–5 of the course report |
+| **Reference dataset** | Measurements provided by the course (Prof. Samah Gadhoum; Parts I/II on 10 September 2026, Part III on 13 September 2026) for use in the Results section: Part I (ONP spectrum, ONP standard curve), Part II (enzyme dilution) and Part III (ONPG series without and with IPTG) | Primary analysis: calibration, V₀, K_m, V_max, K_m,app, V_max,app, K_i; Figures 1–4, Tables 1–5 of the course report |
 | **Experimental dataset** | Our laboratory group's own GENESYS 10S printouts (Almokhtar Aljarodi and Abdulrahman Khardali; 7 and 11 September 2026) | Discussion and troubleshooting, secondary analysis (Figures S1, S4; Tables S3, S7, S8), raw-data appendix |
 
 The terms describe origin and analytical role only. The reference dataset is a course teaching dataset: it is not validated or published data, and nothing in the project implies otherwise. Each condition was measured once in both datasets (no replicates).

@@ -11,6 +11,7 @@
 # Inputs : data/processed/v0_scenarios.csv, progress_curve_fits.csv
 # Outputs: data/processed/kinetic_parameters.csv, inhibition_parameters.csv, sensitivity_analysis.csv,
 #          global_fits.csv, global_fit_residuals.csv, experimental_secondary_kinetics.csv,
+#          experimental_tubeB_control_ratio.csv,
 #          experimental_vs_reference_v0.csv
 #          tables/table5_kinetic_parameters, table5b_inhibition, table_results_substrate,
 #          tableS6_sensitivity, tableS7_experimental_secondary, tableS8_experimental_vs_reference,
@@ -112,7 +113,40 @@ exp_sum <- bind_rows(
   summarise_pair(pair_fit(filter(expd, condition == "mm_no_inhibitor") |> mutate(V0 = V0_umol_per_min_assay),
                           filter(expd, condition == "mm_plus_iptg") |> mutate(V0 = V0_umol_per_min_assay))) |> mutate(tube_B = "included")) |>
   mutate(data_role = "experimental", estimator = PRIMARY, V0_units = "umol/min per 12 mL assay")
+# Uncertainty of Ki from the two separate nonlinear fits (delta method; the fits are independent):
+# Ki = I/(r - 1) with r = Km,app/Km, so se(Ki) = I se(r)/(r - 1)^2 and se(r) = r sqrt((se_Km,app/Km,app)^2 + (se_Km/Km)^2).
+exp_sum <- exp_sum |> mutate(
+  Ki_se = ifelse(method == "Nonlinear MM" & !is.na(Km_se) & !is.na(Km_app_se),
+                 I_mM * (Km_ratio * sqrt((Km_app_se / Km_app)^2 + (Km_se / Km)^2)) / (Km_ratio - 1)^2, NA_real_))
+# Global competitive model (shared Vmax; Km raised by 1 + I/Ki) fitted to our own two series, with and without tube B
+fit_global_exp <- function(d) {
+  d <- d |> mutate(I = if_else(condition == "mm_plus_iptg", iptg_mM, 0), V0 = V0_umol_per_min_assay)
+  st <- exp_sum |> filter(tube_B == "excluded", method == "Nonlinear MM")
+  f <- suppressWarnings(tryCatch(nls(V0 ~ Vmax * onpg_mM / (Km * (1 + I / Ki) + onpg_mM), data = d,
+                                     start = list(Vmax = st$Vmax, Km = st$Km, Ki = 0.1), algorithm = "port",
+                                     lower = c(1e-6, 1e-6, 1e-6), upper = c(50, KM_UPPER_BOUND, 50), control = nls.control(maxiter = 1000, warnOnly = TRUE)),
+                                 error = function(e) NULL))
+  if (is.null(f) || !isTRUE(f$convInfo$isConv)) return(NULL)
+  co <- summary(f)$coefficients
+  tibble(method = "Global nonlinear competitive", Km = co["Km", "Estimate"], Km_se = co["Km", "Std. Error"], Vmax = co["Vmax", "Estimate"], Vmax_se = co["Vmax", "Std. Error"],
+         r2 = 1 - deviance(f) / sum((d$V0 - mean(d$V0))^2), n = sum(d$condition == "mm_no_inhibitor"), tubes = paste(d$tube[d$condition == "mm_no_inhibitor"], collapse = ""), physical = TRUE,
+         Km_app = co["Km", "Estimate"] * (1 + I_mM / co["Ki", "Estimate"]), Km_app_se = NA_real_, Vmax_app = co["Vmax", "Estimate"], Vmax_app_se = NA_real_,
+         r2_app = NA_real_, n_app = sum(d$condition == "mm_plus_iptg"), tubes_app = paste(d$tube[d$condition == "mm_plus_iptg"], collapse = ""), physical_app = TRUE,
+         lb_slope = NA_real_, lb_intercept = NA_real_, lb_slope_app = NA_real_, lb_intercept_app = NA_real_,
+         I_mM = I_mM, Km_ratio = 1 + I_mM / co["Ki", "Estimate"], Vmax_ratio = 1,
+         Ki_competitive = co["Ki", "Estimate"], Ki_from_Vmax_noncompetitive = NA_real_, Ki_se = co["Ki", "Std. Error"], rss = deviance(f))
+}
+exp_glob <- bind_rows(
+  fit_global_exp(expd |> filter(!(condition == "mm_plus_iptg" & tube %in% exclB$tube))) |> mutate(tube_B = "excluded"),
+  fit_global_exp(expd) |> mutate(tube_B = "included")) |>
+  mutate(data_role = "experimental", estimator = PRIMARY, V0_units = "umol/min per 12 mL assay")
+exp_sum <- bind_rows(exp_sum, exp_glob |> select(-rss))
 write_csv(exp_sum, file.path(dir_proc, "experimental_secondary_kinetics.csv"), na = "NA")
+# Inhibited tube B against its own uninhibited control (same nominal ONPG)
+bB <- expd |> filter(condition == "mm_plus_iptg", tube == "B"); uB <- expd |> filter(condition == "mm_no_inhibitor", tube == "B")
+write_csv(tibble(quantity = "V0 inhibited B / V0 uninhibited B (same 1.10 mM ONPG)", value = bB$V0_umol_per_min_assay / uB$V0_umol_per_min_assay,
+                 V0_inhibited_B = bB$V0_umol_per_min_assay, V0_uninhibited_B = uB$V0_umol_per_min_assay),
+          file.path(dir_proc, "experimental_tubeB_control_ratio.csv"), na = "NA")
 
 # Experimental versus reference, tube by tube
 cmp <- fits |> filter(n_used > 0) |>
@@ -157,7 +191,7 @@ write_table(sens |> transmute(Estimator = sub(":.*$", "", estimator), Method = m
             "tableS6_sensitivity", digits = 4)
 write_table(exp_sum |> transmute(`+IPTG tube B` = tube_B, Method = method, `Km (mM)` = round(Km, 3), `Km,app (mM)` = round(Km_app, 3),
                                  `Vmax (umol/min)` = round(Vmax, 3), `Vmax,app (umol/min)` = round(Vmax_app, 3), `Vmax,app/Vmax` = round(Vmax_ratio, 2),
-                                 `Ki (mM)` = round(Ki_competitive, 3), `R2 (-I)` = round(r2, 3), `R2 (+I)` = round(r2_app, 3), `Tubes (-I / +I)` = paste(tubes, tubes_app, sep = " / ")),
+                                 `Ki (mM)` = round(Ki_competitive, 3), `Ki SE (mM)` = round(Ki_se, 3), `R2 (-I)` = round(r2, 3), `R2 (+I)` = round(r2_app, 3), `Tubes (-I / +I)` = paste(tubes, tubes_app, sep = " / ")),
             "tableS7_experimental_secondary", digits = 4)
 write_table(cmp |> transmute(Condition = condition_label, Tube = tube, `V0 reference (dA415/min)` = round(V0_dA415_per_min_reference, 4),
                              `V0 experimental (dA415/min)` = round(V0_dA415_per_min_experimental, 4), `Experimental / reference` = round(ratio_experimental_over_reference, 2),

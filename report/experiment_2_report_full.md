@@ -4,7 +4,7 @@ This document accompanies `experiment_2_submission.md` (the graded course report
 
 ## 1. Datasets, provenance and terminology
 
-Two datasets were analysed. The **reference dataset** is the set of course-provided measurements supplied by the laboratory instructor (Professor Samah Gadhoum; e-mail of 13 September 2026: "These are some results you can use for your results section. Please discuss your own results in the discussion part") and was used for the primary kinetic analysis. The **experimental dataset** is the set of measurements collected by our laboratory group (14 GENESYS 10S printouts from 7 and 11 September 2026) and was analysed separately for technical interpretation and troubleshooting. The labels describe origin and analytical role; neither dataset is externally validated or published, and the experimental dataset is not a replicate of the reference dataset (different sessions, different operators). Original labels are retained in the raw files and in the crosswalk below.
+Two datasets were analysed. The **reference dataset** is the set of course-provided measurements supplied by the laboratory instructor (Professor Samah Gadhoum; Parts I/II supplied on 10 September 2026 and Part III on 13 September 2026, with the instruction: "These are some results you can use for your results section. Please discuss your own results in the discussion part") and was used for the primary kinetic analysis. The **experimental dataset** is the set of measurements collected by our laboratory group (14 GENESYS 10S printouts from 7 and 11 September 2026) and was analysed separately for technical interpretation and troubleshooting. The labels describe origin and analytical role; neither dataset is externally validated or published, and the experimental dataset is not a replicate of the reference dataset (different sessions, different operators). Original labels are retained in the raw files and in the crosswalk below.
 
 | Role | Dataset label in this project | Label on the source | File |
 |---|---|---|---|
@@ -482,12 +482,14 @@ Kₘ (no inhibitor), apparent Kₘ (+IPTG) and Kᵢ from the reference dataset u
 
 ## 5. Secondary analysis: the experimental dataset
 
-| +IPTG tube B | Method | Km (mM) | Km,app (mM) | Vmax (umol/min) | Vmax,app (umol/min) | Vmax,app/Vmax | Ki (mM) | R2 (-I) | R2 (+I) | Tubes (-I / +I) |
-|---|---|---|---|---|---|---|---|---|---|---|
-| excluded | Lineweaver-Burk | 0.156 | 3.087 | 0.421 | 0.792 | 1.88 | 0.024 | 0.95 | 0.969 | ABCDE / ACD |
-| excluded | Nonlinear MM | 0.137 | 1.206 | 0.409 | 0.414 | 1.01 | 0.059 | 0.942 | 0.984 | ABCDE / ACD |
-| included | Lineweaver-Burk | 0.156 | 38.16 | 0.421 | 9.042 | 21.5 | 0.002 | 0.95 | 0.945 | ABCDE / ABCD |
-| included | Nonlinear MM | 0.137 | 0.783 | 0.409 | 0.458 | 1.12 | 0.097 | 0.942 | 0.541 | ABCDE / ABCD |
+| +IPTG tube B | Method | Km (mM) | Km,app (mM) | Vmax (umol/min) | Vmax,app (umol/min) | Vmax,app/Vmax | Ki (mM) | Ki SE (mM) | R2 (-I) | R2 (+I) | Tubes (-I / +I) |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| excluded | Lineweaver-Burk | 0.156 | 3.087 | 0.421 | 0.792 | 1.88 | 0.024 | NA | 0.95 | 0.969 | ABCDE / ACD |
+| excluded | Nonlinear MM | 0.137 | 1.206 | 0.409 | 0.414 | 1.01 | 0.059 | 0.029 | 0.942 | 0.984 | ABCDE / ACD |
+| included | Lineweaver-Burk | 0.156 | 38.16 | 0.421 | 9.042 | 21.5 | 0.002 | NA | 0.95 | 0.945 | ABCDE / ABCD |
+| included | Nonlinear MM | 0.137 | 0.783 | 0.409 | 0.458 | 1.12 | 0.097 | 0.215 | 0.942 | 0.541 | ABCDE / ABCD |
+| excluded | Global nonlinear competitive | 0.137 | 1.179 | 0.409 | 0.409 | 1 | 0.061 | 0.013 | 0.981 | NA | ABCDE / ACD |
+| included | Global nonlinear competitive | 0.149 | 0.647 | 0.419 | 0.419 | 1 | 0.137 | 0.115 | 0.691 | NA | ABCDE / ABCD |
 
 **Table A15.** Kinetics from our Part III printouts with the same rule and units (uninhibited E is a Tier-2 origin-assumed estimate). With +IPTG tube B excluded, the nonlinear fits give K_m = 0.137 mM, V_max = 0.409 µmol min⁻¹, K_m,app = 1.206 mM, V_max,app = 0.414 (ratio 1.01), K_i = 0.059 mM: the textbook competitive pattern, with K_m near the literature 0.12 mM. The Lineweaver–Burk analysis of the same points is distorted by the three-point inhibited series (K_m,app 3.09 mM, V_max,app 1.88 × V_max) and, if tube B is included, becomes meaningless (K_m,app = 38 mM).
 
