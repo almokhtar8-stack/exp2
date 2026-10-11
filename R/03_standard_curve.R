@@ -1,20 +1,5 @@
 # 03_standard_curve.R
-# Part I of the reference dataset: ONP absorption spectrum and ONP standard curve.
-#
-# Spectrum: lambda_max is the wavelength of maximal absorbance (manual tube 4,
-# 1.0 mL of 1 mM ONP in a 3.0 mL standard, 0.333 mM in the cuvette).
-# Standard curve: [ONP] in each cuvette = 1 mM x V_ONP / 3.0 mL. The linear
-# (Beer-Lambert) region is chosen with the same increment rule used for the
-# progress curves, applied along the concentration axis from the three lowest
-# standards. The extinction coefficient is the slope of the least-squares line
-# A415 = a + epsilon [ONP] over that region (path length 1 cm). Alternative
-# calibrations (through the origin, with the zero-concentration point, with the
-# highest standard, all reported points) are tabulated so that the effect of
-# each choice on epsilon, and therefore on Vmax, is visible.
-#
-# Inputs : data/processed/onp_spectrum.csv, data/processed/onp_standards.csv
-# Outputs: data/processed/onp_calibration.csv, onp_standards_fit.csv, calibration_variants.csv
-#          tables/table2_onp_calibration, tableS_calibration_variants
+
 source(here::here("R", "00_setup.R"))
 
 spec <- read_csv(file.path(dir_proc, "onp_spectrum.csv"), show_col_types = FALSE)
