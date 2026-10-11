@@ -155,7 +155,7 @@ figQ1 <- ggplot(q, aes(S, V)) +
   scale_y_continuous(breaks = c(0, 0.5, 0.8, 1), labels = c("0", "Vmax/2", "0.8 Vmax", "Vmax"), limits = c(0, 1.2), expand = expansion(mult = c(0, 0.02))) +
   labs(x = "Substrate concentration [S]", y = "Initial velocity V") +
   theme_nebula_science(base_size = 8.5) + theme(axis.text = element_text(size = 7.5), axis.title = element_text(size = 8.5), plot.margin = margin(4, 6, 2, 3))
-save_figure(figQ1, "figureQ1_michaelis_menten_sketch", 4.6, 2.9, dir = dir_supp)
+save_figure(figQ1, "figureQ1_michaelis_menten_sketch", 4.6, 2.9, dir = dir_fig)
 
 # Captions -------------------------------------------------------------------------------------------------------
 d_i <- depl |> filter(data_role == "reference", condition == "mm_no_inhibitor")
@@ -224,6 +224,6 @@ sprintf("**(A)** Michaelis–Menten representation of our Part III data with the
 )
 writeLines(cap, file.path(dir_fig, "README.md"))
 
-for (f in c("figureS1_experimental_vs_reference_curves", "figureS2_increment_diagnostics", "figureS3_estimator_sensitivity", "figureS4_experimental_kinetics", "figureQ1_michaelis_menten_sketch"))
+for (f in c("figureS1_experimental_vs_reference_curves", "figureS2_increment_diagnostics", "figureS3_estimator_sensitivity", "figureS4_experimental_kinetics"))
   check_that(all(file.exists(file.path(dir_supp, paste0(f, c(".png", ".pdf"))))), paste("figure not written:", f))
-message("07b_supplementary_figures.R: S1-S4 and Q1 written to ", dir_supp, "; captions in figures/README.md")
+message("07b_supplementary_figures.R: S1-S4 written to ", dir_supp, "; captions in figures/README.md")

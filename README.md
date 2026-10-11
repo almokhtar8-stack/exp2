@@ -8,6 +8,10 @@ Almokhtar Aljarodi (lab partner: Abdulrahman Khardali)
 
 - `report/experiment_2_submission.pdf` (also `.docx`)
 
+## Supplementary figures
+
+`supplementary_figures/` contains Figures S1–S4 (additional analysis of our own data, not part of the report).
+
 ## Data
 
 - `data/raw/reference/`: course-provided dataset (Prof. Samah Gadhoum), used in the Results.
@@ -15,7 +19,7 @@ Almokhtar Aljarodi (lab partner: Abdulrahman Khardali)
 
 ## Analysis
 
-The R scripts in `R/` produce all tables (`tables/`), figures (`figures/`) and numbers in the report. To rerun everything:
+The R scripts in `R/` produce every number, table and figure in the report. To rerun everything:
 
 ```bash
 Rscript R/run_all.R

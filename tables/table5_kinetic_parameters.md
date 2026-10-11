@@ -1,8 +1,0 @@
-| Condition | Method | Km | Vmax | Ki | Fit |
-|---|---|---|---|---|---|
-| No inhibitor | Lineweaver-Burk | 0.314 | 0.477 | NA | R2 0.928 |
-| No inhibitor | Nonlinear MM | 0.363 ± 0.128 | 0.494 ± 0.059 | NA | R2 0.919 |
-| + 0.458 mM IPTG | Lineweaver-Burk | 1.757 (app.) | 0.282 (app.) | 0.100 | R2 0.988 |
-| + 0.458 mM IPTG | Nonlinear MM | n.d. | n.d. | NA | R2 0.962 |
-| Both series | Global, competitive | 0.435 ± 0.166 | 0.529 ± 0.072 | 0.107 ± 0.042 | RSS 0.0194 |
-| Both series | Global, noncompetitive | 0.744 ± 0.382 | 0.626 ± 0.139 | 0.433 ± 0.181 | RSS 0.0371 |

@@ -124,7 +124,7 @@ The raw data (our 14 printouts and their transcription; the reference values as 
 
 **1. Sketch by hand a typical enzyme kinetic curve of [S] versus V. The maximum [S] should be about 4 times the Km. Draw lines at [S]=Km and V=Vmax. Make sure you get the slope at the origin ([S]=0) correct. Draw the asymptote (tangent line) at [S]=0.**
 
-![Figure Q1](../figures/supplementary/figureQ1_michaelis_menten_sketch.png)
+![Figure Q1](../figures/figureQ1_michaelis_menten_sketch.png)
 
 The curve is the hyperbola V = Vmax[S]/(Km + [S]), drawn to [S] = 4 Km. It leaves the origin with slope Vmax/Km (the first-order region, V ≈ (Vmax/Km)[S]), passes V = Vmax/2 at [S] = Km, and bends towards the asymptote V = Vmax, reaching 0.8 Vmax at [S] = 4 Km; the tangent at the origin meets the line V = Vmax at [S] = Km.
 

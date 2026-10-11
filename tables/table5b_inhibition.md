@@ -1,5 +1,0 @@
-| Method | Km (mM) | Km,app (mM) | Km,app/Km | Vmax (umol/min) | Vmax,app (umol/min) | Vmax,app/Vmax | [IPTG] (mM) | Ki, competitive (mM) | Ki if noncompetitive (mM) |
-|---|---|---|---|---|---|---|---|---|---|
-| Lineweaver-Burk | 0.314 | 1.757 | 5.6 | 0.477 | 0.282 | 0.59 | 0.458 | 0.1 | 0.662 |
-| Nonlinear MM | 0.363 | NA | NA | 0.494 | NA | NA | 0.458 | NA | NA |
-| Global nonlinear competitive | 0.435 | 2.297 | 5.28 | 0.529 | 0.529 | 1 | 0.458 | 0.107 | NA |

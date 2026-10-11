@@ -1,9 +1,0 @@
-| Reported tube | Manual preparation | ONP 1 mM (mL) | [ONP] in cuvette (mM) | A415 | A415 / [ONP] (per mM) | Fitted |
-|---|---|---|---|---|---|---|
-| 1 | Blank | 0 | 0 | 0 | NA | no (zero point) |
-| 2 | Standard 1 | 0.25 | 0.0833 | 0.428 | 5.14 | yes |
-| 3 | Standard 2 | 0.5 | 0.1667 | 0.856 | 5.14 | yes |
-| 4 | Standard 3 | 0.75 | 0.25 | 1.24 | 4.96 | yes |
-| 5 | Standard 4 | 1 | 0.3333 | 1.723 | 5.17 | yes |
-| 6 | Standard 5 | 1.3 | 0.4333 | 2.256 | 5.21 | yes |
-| 7 | Standard 6 | 1.6 | 0.5333 | 3.236 | 6.07 | no (+17%) |
