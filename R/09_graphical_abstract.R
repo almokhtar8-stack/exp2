@@ -1,8 +1,5 @@
 # 09_graphical_abstract.R
-# Graphical abstract for the journal-style version: reaction scheme, assay
-# logic and the two saturation curves of the reference dataset, with the
-# headline numbers taken from the processed results.
-# Output: figures/graphical_abstract.{png,pdf}
+
 source(here::here("R", "00_setup.R"))
 theme_set(theme_nebula_science(base_size = 10))
 
