@@ -127,12 +127,15 @@ convert_v0 <- function(slope_dA_per_min, epsilon) {
 #           ABS_TOL absorbance units of it, whichever is larger, so that
 #           low-signal curves are not cut by read-out noise). V0 = slope.
 #   Tier 2  no initial linear portion: when the second and third increments both
-#           fall below the first by more than the tolerance, the rate was already
-#           declining within the first sampling interval. V0 is then taken from
-#           the earliest interval available, the 0-2 min secant through the
-#           origin (A415 = 0 at t = 0), and flagged. The origin assumption is
-#           tested in 02_progress_curves.R against the intercepts of the curves
-#           that are linear, and an offset-corrected variant is carried through
+#           fall below the first by more than the tolerance, no linear window
+#           can be fitted. V0 is then the 0-2 min average rate, A415(2 min)/2 min,
+#           which assumes A415 = 0 at t = 0 because no reading exists there. This
+#           is an origin-assumed average rate over the first interval, not a
+#           measured instantaneous initial velocity; it is flagged (†) wherever
+#           it is used. 02_progress_curves.R adds a sensitivity scenario in
+#           which the t = 0 absorbance is set to the median intercept of the
+#           curves that are linear (an assumption transferred between
+#           reactions, not a measured baseline), carried through as estimator O
 #           the sensitivity analysis.
 REL_TOL    <- 0.20
 ABS_TOL    <- 0.010

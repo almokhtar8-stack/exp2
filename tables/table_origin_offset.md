@@ -1,5 +1,5 @@
-| Dataset | Linear curves (n) | Median intercept (A415) | Min | Max | Median secant bias (dA415/min) | Max secant bias (dA415/min) |
+| Dataset | Linear curves (n) | Median intercept (A415) | Min | Max | Scenario shift of a 0-2 min estimate, median intercept (dA415/min) | Scenario shift, largest intercept (dA415/min) |
 |---|---|---|---|---|---|---|
-| Experimental dataset (our laboratory group) | 13 | 0.0112 | -0.0205 | 0.0307 | 0.0056 | 0.0153 |
+| Experimental dataset (our laboratory group) | 13 | 0.011 | -0.0205 | 0.0307 | 0.0055 | 0.0153 |
 | Reference dataset (course-provided) | 11 | 0.0142 | -0.0017 | 0.0593 | 0.0071 | 0.0297 |
-| both datasets | 24 | 0.0127 | -0.0205 | 0.0593 | 0.0064 | 0.0297 |
+| both datasets | 24 | 0.0126 | -0.0205 | 0.0593 | 0.0063 | 0.0297 |

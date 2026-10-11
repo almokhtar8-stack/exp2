@@ -167,7 +167,7 @@ audit_e <- tidy |> filter(data_role == "experimental") |> group_by(dataset, sour
     source_label == "Day 2 Black" & tube == "B" ~ "Whole curve faster than tube A at half the nominal ONPG; 10-min value 1.106 retained (46% of predicted increment)",
     source_label == "Day 2 Blue"  & tube == "E" ~ "Non-linear from the outset (2nd increment 53% of 1st)",
     source_label == "Day 2 Blue"  & tube == "D" ~ "Decelerates after 6 min",
-    source_label == "Day 2 Black" & tube == "A" ~ "ID 3 last digit under photo glare; CSV 0.478 consistent with legible 0.47x",
+    source_label == "Day 2 Black" & tube == "A" ~ "Linear to 10 min; ID 3 last digit under photo glare, 0.476 read from the original printout",
     TRUE ~ "Linear to 8 or 10 min"))
 write_table(audit_e, "table_audit_experimental", digits = 3)
 
@@ -204,8 +204,10 @@ write_table(table_r4, "table_r4_substrate_series_raw", digits = 4)
 tableS2 <- tidy |> filter(data_role == "experimental") |> select(dataset, source_label, condition_label, tube, time_min, absorbance_415nm) |>
   pivot_wider(names_from = time_min, values_from = absorbance_415nm, names_glue = "{time_min} min") |>
   arrange(match(dataset, EXPERIMENTAL_LABEL_MAP$dataset), tube) |>
-  rename(Dataset = dataset, `Printout label` = source_label, Condition = condition_label, Tube = tube)
-write_table(tableS2, "tableS2_experimental_raw_absorbance", digits = 3)
+  rename(Dataset = dataset, `Printout label` = source_label, Condition = condition_label, Tube = tube) |>
+  # Printed exactly as the instrument reports them (three decimals), not rounded to significant figures
+  mutate(across(ends_with(" min"), ~ ifelse(is.na(.x), NA_character_, formatC(.x, digits = 3, format = "f"))))
+write_table(tableS2, "tableS2_experimental_raw_absorbance")
 
 table_comp <- comp |> filter(part != "Part I") |>
   transmute(Part = part, Condition = CONDITION_LABELS[condition], Tube = tube,

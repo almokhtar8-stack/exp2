@@ -14,9 +14,9 @@ experimental,Experimental Part II,enzyme_dilution,D,2-10 min,5,0.027499999999999
 experimental,Experimental Part II,enzyme_dilution,E,2-6 min,3,0.02,0.007999999999999991,0.9981285090455396,0.002449489742783174,
 experimental,Experimental Part II,enzyme_dilution,E,2-8 min,4,0.02015,0.007500000000000007,0.9992247823545697,0.0017748239349298848,
 experimental,Experimental Part II,enzyme_dilution,E,2-10 min,5,0.019749999999999993,0.00910000000000008,0.9991866898919003,0.002057506581601453,yes
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2-6 min,3,0.07875,0.005333333333333338,0.9999966406428465,4.0824829046384736e-4,
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2-8 min,4,0.07764999999999998,0.009000000000000064,0.9998648500187594,0.0028548204847240245,
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2-10 min,5,0.07709999999999999,0.011200000000000267,0.9998805743197782,0.0030767948691237104,yes
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2-6 min,3,0.07824999999999999,0.006666666666666657,0.9999965975747512,4.0824829046384736e-4,
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2-8 min,4,0.07755,0.008999999999999952,0.999944299767015,0.0018303005217723109,
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2-10 min,5,0.07709999999999999,0.010800000000000195,0.999937760522677,0.0022211108331942476,yes
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,2-6 min,3,0.11975000000000001,0.028666666666666573,0.9999636811612731,0.00204124145231932,
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,2-8 min,4,0.12099999999999998,0.024500000000000077,0.9999146306066349,0.0035355339059327594,yes
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,2-10 min,5,0.10815000000000002,0.07589999999999998,0.9860272193030449,0.04701028256314424,
@@ -38,9 +38,9 @@ experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,2-10 min,5,0.085699
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,2-6 min,3,0.08725,0.03066666666666658,0.9990130247919423,0.007756717518813349,yes
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,2-8 min,4,0.07905000000000001,0.057999999999999996,0.9924032088045596,0.02187121395807743,
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,2-10 min,5,0.07060000000000001,0.09180000000000002,0.9812350384276175,0.035650151939835145,
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,2-6 min,3,0.03449999999999999,0.04900000000000008,0.9700488997555013,0.01714642819948224,secant used instead
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,2-8 min,4,0.03089999999999999,0.06100000000000008,0.9761386290446251,0.015277434339574167,secant used instead
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,2-10 min,5,0.0285,0.07060000000000005,0.978991900491756,0.015244671200127574,secant used instead
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,2-6 min,3,0.03449999999999999,0.04900000000000008,0.9700488997555013,0.01714642819948224,origin-assumed 0-2 min estimate used instead
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,2-8 min,4,0.03089999999999999,0.06100000000000008,0.9761386290446251,0.015277434339574167,origin-assumed 0-2 min estimate used instead
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,2-10 min,5,0.0285,0.07060000000000005,0.978991900491756,0.015244671200127574,origin-assumed 0-2 min estimate used instead
 reference,Reference Part II,enzyme_dilution,A,2-6 min,3,0.13599999999999995,0.059333333333333536,0.9999819784101353,0.001632993161855556,yes
 reference,Reference Part II,enzyme_dilution,A,2-8 min,4,0.10865,0.15049999999999986,0.9594579245365445,0.07062683625931439,
 reference,Reference Part II,enzyme_dilution,A,2-10 min,5,0.12564999999999998,0.0825000000000002,0.9670221354094889,0.08472760274353729,
@@ -56,9 +56,9 @@ reference,Reference Part II,enzyme_dilution,D,2-10 min,5,0.025150000000000002,0.
 reference,Reference Part II,enzyme_dilution,E,2-6 min,3,0.02375,0.01533333333333334,0.9999630669227361,4.0824829046386124e-4,
 reference,Reference Part II,enzyme_dilution,E,2-8 min,4,0.022649999999999997,0.019000000000000017,0.9984138954435984,0.002854820484724033,
 reference,Reference Part II,enzyme_dilution,E,2-10 min,5,0.0229,0.018000000000000026,0.9991045572321293,0.002503331114069131,yes
-reference,Reference Part III (+IPTG),mm_plus_iptg,A,2-6 min,3,0.09699999999999999,0.03333333333333335,0.9358154029771575,0.07185169912163991,secant used instead
-reference,Reference Part III (+IPTG),mm_plus_iptg,A,2-8 min,4,0.0932,0.045999999999999985,0.9700960464596828,0.05174553120801833,secant used instead
-reference,Reference Part III (+IPTG),mm_plus_iptg,A,2-10 min,5,0.092,0.050800000000000185,0.9842638720270906,0.04247666025791877,secant used instead
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,2-6 min,3,0.09699999999999999,0.03333333333333335,0.9358154029771575,0.07185169912163991,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,2-8 min,4,0.0932,0.045999999999999985,0.9700960464596828,0.05174553120801833,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,2-10 min,5,0.092,0.050800000000000185,0.9842638720270906,0.04247666025791877,origin-assumed 0-2 min estimate used instead
 reference,Reference Part III (+IPTG),mm_plus_iptg,B,2-6 min,3,0.03275,-0.0016666666666666802,0.9990491345183575,0.0028577380332470564,yes
 reference,Reference Part III (+IPTG),mm_plus_iptg,B,2-8 min,4,0.029549999999999993,0.009000000000000064,0.9917824944984737,0.008505880318932313,
 reference,Reference Part III (+IPTG),mm_plus_iptg,B,2-10 min,5,0.02849999999999999,0.013200000000000064,0.9942225540717529,0.0079330532163432,
@@ -77,18 +77,18 @@ reference,Reference Part III (+IPTG),mm_plus_iptg,F,2-10 min,5,0.003100000000000
 reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2-6 min,3,0.13324999999999998,0.014666666666666696,0.9999706673299761,0.0020412414523192646,
 reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2-8 min,4,0.13524999999999998,0.008000000000000118,0.9998428569964507,0.0053619026473818755,
 reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2-10 min,5,0.132,0.02100000000000008,0.9993117687543014,0.012649110640673505,yes
-reference,Reference Part III (-IPTG),mm_no_inhibitor,B,2-6 min,3,0.07849999999999999,0.05300000000000007,0.9922708425586733,0.01959591794226539,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,B,2-8 min,4,0.07055,0.07950000000000002,0.9878270663448204,0.024765903981078505,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,B,2-10 min,5,0.06434999999999998,0.10430000000000027,0.9835850338358634,0.03035512038080772,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,C,2-6 min,3,0.050249999999999996,0.06266666666666663,0.9849738322010206,0.01755467648994613,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,C,2-8 min,4,0.0443,0.08249999999999999,0.98050961778666,0.019750949344272063,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,C,2-10 min,5,0.03855000000000001,0.1055,0.9658357542552986,0.026474516048456808,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,D,2-6 min,3,0.02525000000000001,0.06333333333333326,0.9830078375947577,0.009389710680668864,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,D,2-8 min,4,0.021449999999999997,0.07600000000000001,0.970398882180802,0.011846940533319137,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,D,2-10 min,5,0.022500000000000006,0.07179999999999997,0.9842136983105546,0.01040512694140089,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,E,2-6 min,3,0.012499999999999978,0.09333333333333348,0.974532224532225,0.005715476066494029,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,E,2-8 min,4,0.009150000000000002,0.10449999999999998,0.9018176922041202,0.009547250913221037,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,E,2-10 min,5,0.007550000000000002,0.1109,0.8889971927635683,0.009741663102366047,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,F,2-6 min,3,0.0074999999999999945,0.0336666666666667,0.9642857142857144,0.004082482904638623,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,F,2-8 min,4,0.006049999999999998,0.03850000000000001,0.9424525265529452,0.004727578661429119,secant used instead
-reference,Reference Part III (-IPTG),mm_no_inhibitor,F,2-10 min,5,0.0051499999999999975,0.04210000000000001,0.9322495606326892,0.005069516742254617,secant used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,2-6 min,3,0.07849999999999999,0.05300000000000007,0.9922708425586733,0.01959591794226539,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,2-8 min,4,0.07055,0.07950000000000002,0.9878270663448204,0.024765903981078505,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,2-10 min,5,0.06434999999999998,0.10430000000000027,0.9835850338358634,0.03035512038080772,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,2-6 min,3,0.050249999999999996,0.06266666666666663,0.9849738322010206,0.01755467648994613,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,2-8 min,4,0.0443,0.08249999999999999,0.98050961778666,0.019750949344272063,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,2-10 min,5,0.03855000000000001,0.1055,0.9658357542552986,0.026474516048456808,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,2-6 min,3,0.02525000000000001,0.06333333333333326,0.9830078375947577,0.009389710680668864,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,2-8 min,4,0.021449999999999997,0.07600000000000001,0.970398882180802,0.011846940533319137,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,2-10 min,5,0.022500000000000006,0.07179999999999997,0.9842136983105546,0.01040512694140089,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,2-6 min,3,0.012499999999999978,0.09333333333333348,0.974532224532225,0.005715476066494029,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,2-8 min,4,0.009150000000000002,0.10449999999999998,0.9018176922041202,0.009547250913221037,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,2-10 min,5,0.007550000000000002,0.1109,0.8889971927635683,0.009741663102366047,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,2-6 min,3,0.0074999999999999945,0.0336666666666667,0.9642857142857144,0.004082482904638623,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,2-8 min,4,0.006049999999999998,0.03850000000000001,0.9424525265529452,0.004727578661429119,origin-assumed 0-2 min estimate used instead
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,2-10 min,5,0.0051499999999999975,0.04210000000000001,0.9322495606326892,0.005069516742254617,origin-assumed 0-2 min estimate used instead

@@ -14,8 +14,8 @@ sens <- read_csv(file.path(dir_proc, "sensitivity_analysis.csv"), show_col_types
 PRIMARY <- "P: two-tier rule (primary)"
 gc <- glob |> filter(model == "global competitive"); gk <- function(p) gc$estimate[gc$parameter == p]
 I_mM <- V("I_mM")
-Ki_range <- range(c(V("Ki_lb"), gk("Ki"), sens$Ki_competitive[sens$estimator == "O: two-tier rule, secant corrected for the t = 0 offset" & sens$method == "Lineweaver-Burk"]))
-Ki_S <- sens$Ki_competitive[sens$estimator == "S: 0-2 min secant for every curve" & sens$method == "Lineweaver-Burk"]
+Ki_range <- range(c(V("Ki_lb"), gk("Ki"), sens$Ki_competitive[sens$estimator == "O: two-tier rule, baseline-offset scenario for the 0-2 min estimates" & sens$method == "Lineweaver-Burk"]))
+Ki_S <- sens$Ki_competitive[sens$estimator == "S: origin-assumed 0-2 min average rate for every curve" & sens$method == "Lineweaver-Burk"]
 
 box <- function(x, y, label, fill, col = "white", size = 3.1, face = "plain") {
   geom_label(aes(x = x, y = y, label = label), fill = fill, colour = col, size = size, family = FIG_FONT, fontface = face,
@@ -38,8 +38,8 @@ scheme <- ggplot() +
              "V₀ approximately ∝ enzyme (R² = ", sprintf("%.2f", V("ed_r2")), ")\n",
              "Kₘ = ", sprintf("%.2f", V("lbU_Km")), " mM, Vₘₐₓ = ", sprintf("%.2f", V("lbU_Vmax")), " μmol min⁻¹\n",
              "+ ", sprintf("%.3f", I_mM), " mM IPTG: apparent Kₘ ×", sprintf("%.1f", V("lbI_Km") / V("lbU_Km")), "\n",
-             "Kᵢ = ", sprintf("%.2f", Ki_range[1]), "–", sprintf("%.2f", Ki_range[2]), " mM across rule-based estimators\n",
-             sprintf("(%.2f mM under the crudest; purified enzyme 0.08 mM)", Ki_S))) +
+             "Kᵢ = ", sprintf("%.2f", V("Ki_lb")), " mM by the course method; other estimators\n",
+             sprintf("%.2f–%.2f mM (method-dependent; purified enzyme 0.08 mM)", min(gk("Ki"), Ki_range[2]), Ki_S))) +
   annotate("text", x = 3, y = 32.5, hjust = 0, vjust = 0, size = 3.3, family = FIG_FONT, colour = nebula[["violet"]], fontface = "bold",
            label = "Kinetics consistent with competitive inhibition") +
   coord_cartesian(xlim = c(0, 80), ylim = c(0, 100), expand = FALSE, clip = "off") + theme_void()

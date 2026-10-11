@@ -16,8 +16,8 @@ vals_fig <- read_csv(file.path(dir_fig, "main_figure_values.csv"), show_col_type
 fits <- rd("progress_curve_fits.csv"); v0 <- rd("v0_scenarios.csv"); sens <- rd("sensitivity_analysis.csv")
 expk <- rd("experimental_secondary_kinetics.csv"); cmp <- rd("experimental_vs_reference_v0.csv"); depl <- rd("depletion_estimates.csv")
 ed <- rd("enzyme_dilution_results.csv"); edfit <- rd("enzyme_dilution_fit.csv"); glob <- rd("global_fits.csv"); calib <- rd("onp_calibration.csv")
-offs <- rd("origin_offset_test.csv"); calv <- rd("calibration_variants.csv")
-PRIMARY <- "P: two-tier rule (primary)"; OFFSET <- "O: two-tier rule, secant corrected for the t = 0 offset"
+offs <- rd("origin_offset_scenario.csv"); calv <- rd("calibration_variants.csv")
+PRIMARY <- "P: two-tier rule (primary)"; OFFSET <- "O: two-tier rule, baseline-offset scenario for the 0-2 min estimates"
 
 vals <- setNames(as.list(vals_fig$value), vals_fig$name)
 vals$ed_relrates <- vals_fig$text[vals_fig$name == "ed_relrates"]
@@ -67,7 +67,7 @@ for (k in seq_len(nrow(ds))) vals[[paste0("sconv10_", ds$tube[k])]] <- ds$percen
 pick <- function(est, meth = "Lineweaver-Burk") sens |> filter(estimator == est, method == meth)
 sA <- pick("A: all five points for every curve"); vals$A_Km <- sA$Km
 sR <- pick("R: initial-window regression only"); vals$R_icpt_sign <- ifelse(sR$physical, "positive", "negative")
-sS <- pick("S: 0-2 min secant for every curve"); vals$S_Km <- sS$Km; vals$S_Kmapp <- sS$Km_app; vals$S_Ki <- sS$Ki_competitive
+sS <- pick("S: origin-assumed 0-2 min average rate for every curve"); vals$S_Km <- sS$Km; vals$S_Kmapp <- sS$Km_app; vals$S_Ki <- sS$Ki_competitive
 sO <- pick(OFFSET); vals$O_Km <- sO$Km; vals$O_Kmapp <- sO$Km_app; vals$O_Ki <- sO$Ki_competitive; vals$O_Km_ratio <- sO$Km_ratio; vals$O_Vmax <- sO$Vmax
 sOn <- pick(OFFSET, "Nonlinear MM"); vals$O_nl_Km <- sOn$Km; vals$O_nl_Vmax <- sOn$Vmax
 ki_set <- c(vals$Ki_lb, vals$g_Ki, vals$O_Ki); vals$Ki_min <- min(ki_set); vals$Ki_max <- max(ki_set)
@@ -75,14 +75,16 @@ km_set <- c(vals$lbU_Km, vals$nlU_Km, vals$O_Km, vals$O_nl_Km, vals$g_Km); vals$
 # origin offset test
 ob <- offs |> filter(data_role == "both"); orf <- offs |> filter(data_role == "reference")
 vals$off_median <- ob$median_intercept; vals$off_min <- ob$min_intercept; vals$off_max <- ob$max_intercept; vals$off_n <- ob$n_curves
-vals$off_bias_median <- ob$median_secant_bias_dA_per_min; vals$off_bias_max <- ob$max_secant_bias_dA_per_min
+vals$off_shift_median <- ob$median_scenario_shift_dA_per_min; vals$off_shift_max <- ob$max_scenario_shift_dA_per_min
 vals$off_ref_median <- orf$median_intercept; vals$off_ref_max <- orf$max_intercept
 # experimental dataset kinetics (tube B excluded / included)
 su <- expk |> filter(tube_B == "excluded")
 for (m in c("Lineweaver-Burk", "Nonlinear MM")) { r <- su |> filter(method == m); pre <- ifelse(m == "Lineweaver-Burk", "s_lb", "s_nl")
   vals[[paste0(pre, "_Km")]] <- r$Km; vals[[paste0(pre, "_Kmapp")]] <- r$Km_app; vals[[paste0(pre, "_Vmax")]] <- r$Vmax; vals[[paste0(pre, "_Vmaxapp")]] <- r$Vmax_app
-  vals[[paste0(pre, "_Ki")]] <- r$Ki_competitive; vals[[paste0(pre, "_Vratio")]] <- r$Vmax_ratio; vals[[paste0(pre, "_Kratio")]] <- r$Km_ratio }
+  vals[[paste0(pre, "_Ki")]] <- r$Ki_competitive; vals[[paste0(pre, "_Vratio")]] <- r$Vmax_ratio; vals[[paste0(pre, "_Kratio")]] <- r$Km_ratio
+  vals[[paste0(pre, "_Km_se")]] <- r$Km_se; vals[[paste0(pre, "_Kmapp_se")]] <- r$Km_app_se; vals[[paste0(pre, "_n")]] <- r$n; vals[[paste0(pre, "_napp")]] <- r$n_app }
 sB <- expk |> filter(tube_B == "included", method == "Lineweaver-Burk"); vals$s_lb_Kmapp_withB <- sB$Km_app
+sBn <- expk |> filter(tube_B == "included", method == "Nonlinear MM"); vals$s_nl_Ki_withB <- sBn$Ki_competitive; vals$s_nl_Kmapp_withB <- sBn$Km_app
 for (k in seq_len(nrow(cmp))) if (!is.na(cmp$ratio_experimental_over_reference[k]))
   vals[[paste0("r_", c(enzyme_dilution = "e", mm_no_inhibitor = "u", mm_plus_iptg = "i")[[cmp$condition[k]]], "_", cmp$tube[k])]] <- cmp$ratio_experimental_over_reference[k]
 sf <- fits |> filter(data_role == "experimental")
@@ -94,7 +96,7 @@ vals$s_blueA_10 <- sf$a415_10min[sf$dataset == "Experimental Part III (-IPTG)" &
 vals$s_blackA_10 <- sf$a415_10min[sf$dataset == "Experimental Part III (+IPTG)" & sf$tube == "A"]
 vals$r_edA_10 <- fits$a415_10min[fits$dataset == "Reference Part II" & fits$tube == "A"]
 vals$r_uA_10 <- fits$a415_10min[fits$dataset == "Reference Part III (-IPTG)" & fits$tube == "A"]
-vals$n_secant_reference <- sum(fits$lower_bound[fits$data_role == "reference"], na.rm = TRUE)
+vals$n_secant_reference <- sum(fits$origin_assumed[fits$data_role == "reference"], na.rm = TRUE)
 vals$n_curves_reference <- sum(fits$data_role == "reference")
 vals$n_curves_total <- sum(fits$n_used > 0)
 vals$plateau_frac_E <- vals$conv10_E; vals$plateau_frac_F <- vals$conv10_F

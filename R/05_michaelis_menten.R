@@ -27,17 +27,17 @@ message(sprintf("Worked example, tube A (no IPTG): %.4f dA415/min / %.2f A mM^-1
 # V0 under each estimator (both datasets, both substrate conditions)
 ESTIMATORS <- c(P = "P: two-tier rule (primary)",
                 R = "R: initial-window regression only",
-                S = "S: 0-2 min secant for every curve",
-                O = "O: two-tier rule, secant corrected for the t = 0 offset",
+                S = "S: origin-assumed 0-2 min average rate for every curve",
+                O = "O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",
                 A = "A: all five points for every curve")
 v0 <- fits |> filter(condition %in% c("mm_no_inhibitor", "mm_plus_iptg"), n_used > 0) |>
-  transmute(data_role, dataset, condition, tube, onpg_mM, iptg_mM, lower_bound,
+  transmute(data_role, dataset, condition, tube, onpg_mM, iptg_mM, origin_assumed,
             !!ESTIMATORS[["P"]] := V0_dA415_per_min,
             !!ESTIMATORS[["R"]] := slope,
             !!ESTIMATORS[["S"]] := secant_0_2,
-            !!ESTIMATORS[["O"]] := if_else(lower_bound, secant_0_2_offset_corrected, V0_dA415_per_min),
+            !!ESTIMATORS[["O"]] := if_else(origin_assumed, secant_0_2_offset_scenario, V0_dA415_per_min),
             !!ESTIMATORS[["A"]] := slope_all5) |>
-  pivot_longer(-c(data_role, dataset, condition, tube, onpg_mM, iptg_mM, lower_bound), names_to = "estimator", values_to = "V0_dA")
+  pivot_longer(-c(data_role, dataset, condition, tube, onpg_mM, iptg_mM, origin_assumed), names_to = "estimator", values_to = "V0_dA")
 v0 <- bind_cols(v0, convert_v0(v0$V0_dA, eps) |> select(V0_uM_per_min_reaction, V0_umol_per_min_assay))
 write_csv(v0, file.path(dir_proc, "v0_scenarios.csv"), na = "NA")
 

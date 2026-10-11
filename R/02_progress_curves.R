@@ -1,15 +1,15 @@
 # 02_progress_curves.R
 # Initial velocity (V0) for every progress curve of both datasets by the rule
 # described in 00_setup.R: regression on the initial linear window where one
-# exists (Tier 1), otherwise the 0-2 min secant through the origin (Tier 2).
+# exists (Tier 1), otherwise the origin-assumed 0-2 min average rate (Tier 2).
 # Alternative estimators are computed for every curve and kept for the
 # sensitivity analysis: the regression on each candidate window (2-6, 2-8,
 # 2-10 min), two-point secants (0-2, 2-4, 2-6 min), the regression on all five
-# points, and the Tier-2 secant corrected for the typical t = 0 offset.
+# points, and the Tier-2 estimate under the baseline-offset scenario.
 #
 # Inputs : data/processed/absorbance_tidy.csv
 # Outputs: data/processed/progress_curve_fits.csv, candidate_windows.csv,
-#          v0_estimator_comparison.csv, origin_offset_test.csv, progress_curve_residuals.csv
+#          v0_estimator_comparison.csv, origin_offset_scenario.csv, progress_curve_residuals.csv
 #          tables/table_v0_reference, tableS3_v0_experimental, tableS4_candidate_windows,
 #          tableS4b_estimator_comparison, table_origin_offset
 source(here::here("R", "00_setup.R"))
@@ -61,42 +61,45 @@ fits <- curves |>
          increments = map_chr(obs, ~ paste(fmt_num(diff(.x$absorbance_415nm), 3), collapse = " / "))) |>
   unnest(win) |>
   mutate(
-    V0_estimator = if_else(curved, "0-2 min secant (no initial linear portion)", sprintf("regression 2-%g min", t_last)),
+    V0_estimator = if_else(curved, "0-2 min average rate, origin assumed (no initial linear portion)", sprintf("regression 2-%g min", t_last)),
     V0_dA415_per_min = if_else(curved, secant_0_2, slope),
     time_points_used = if_else(curved, "0 (origin), 2", map2_chr(obs, t_last, ~ paste(.x$time_min[.x$time_min <= .y], collapse = ", "))),
-    time_points_excluded = if_else(curved, "4, 6, 8, 10 (rate already falling)",
+    time_points_excluded = if_else(curved, "4, 6, 8, 10 (no linear window: later increments fall below the first)",
                                    map2_chr(obs, t_last, ~ { ex <- .x$time_min[.x$time_min > .y]; if (length(ex)) paste(ex, collapse = ", ") else "none" })),
-    lower_bound = curved,
+    origin_assumed = curved,
     note = case_when(
-      curved ~ "Second and third increments both below the first by more than the tolerance: no initial linear portion; 0-2 min secant used (lower bound if the t = 0 offset is zero)",
+      curved ~ "Second and third increments both below the first by more than the tolerance: no initial linear portion; V0 = A415(2 min)/2 min with A415(0) assumed 0 (origin-assumed average rate over the first interval, not a measured instantaneous rate)",
       data_role == "experimental" & dataset == "Experimental Part III (+IPTG)" & tube == "B" ~ "10-min point excluded (46% of predicted increment); whole curve faster than tube A, see audit",
       time_points_excluded != "none" ~ paste0("Point(s) at ", time_points_excluded, " min departed from the initial trend and were excluded from the regression; raw values retained"),
       TRUE ~ "All five points within the initial linear window"))
 
-# Test of the origin assumption behind the Tier-2 secant. For the curves that
-# have an initial linear portion, the regression intercept estimates the
-# absorbance offset at t = 0 (reaction before the timer, matrix difference
-# between the stopped sample and the Z-buffer blank, read-out offset). Its
-# distribution bounds how far the 0-2 min secant can overstate the initial
-# rate: overstatement = offset / 2 min.
+# Baseline-offset sensitivity scenario for the Tier-2 estimate. No curve has a
+# reading at t = 0. For the curves that do have an initial linear portion, the
+# regression intercept is an estimate of their own t = 0 absorbance (reaction
+# before the timer, matrix difference between the stopped sample and the
+# Z-buffer blank, read-out offset). The scenario transfers the median of those
+# intercepts to the Tier-2 curves as an assumed t = 0 absorbance and recomputes
+# the 0-2 min average rate as (A415(2 min) - median intercept)/2 min. Intercepts
+# of other reactions do not bound the unknown baseline of a Tier-2 curve, so
+# this is a what-if calculation, not an uncertainty interval or a correction.
 linear_intercepts <- fits |> filter(!curved) |>
   select(data_role, dataset, tube, n_used, intercept, slope, r2)
 offset_summary <- linear_intercepts |> group_by(data_role) |>
   summarise(n_curves = n(), median_intercept = median(intercept), min_intercept = min(intercept), max_intercept = max(intercept),
-            median_secant_bias_dA_per_min = median(intercept) / 2, max_secant_bias_dA_per_min = max(intercept) / 2, .groups = "drop")
+            median_scenario_shift_dA_per_min = median(intercept) / 2, max_scenario_shift_dA_per_min = max(intercept) / 2, .groups = "drop")
 offset_all <- linear_intercepts |> summarise(data_role = "both", n_curves = n(), median_intercept = median(intercept),
                                              min_intercept = min(intercept), max_intercept = max(intercept),
-                                             median_secant_bias_dA_per_min = median(intercept) / 2, max_secant_bias_dA_per_min = max(intercept) / 2)
+                                             median_scenario_shift_dA_per_min = median(intercept) / 2, max_scenario_shift_dA_per_min = max(intercept) / 2)
 offset_summary <- bind_rows(offset_summary, offset_all)
-write_csv(offset_summary, file.path(dir_proc, "origin_offset_test.csv"))
+write_csv(offset_summary, file.path(dir_proc, "origin_offset_scenario.csv"))
 write_csv(linear_intercepts, file.path(dir_proc, "linear_curve_intercepts.csv"))
 MEDIAN_OFFSET_A <- offset_all$median_intercept
-fits <- fits |> mutate(secant_0_2_offset_corrected = (a415_2min - MEDIAN_OFFSET_A) / 2)
+fits <- fits |> mutate(secant_0_2_offset_scenario = (a415_2min - MEDIAN_OFFSET_A) / 2)
 
 # Curve with no data (Experimental Part III (+IPTG) tube E)
 missing_curve <- tidy |> filter(!measured) |>
   distinct(data_role, dataset, source_label, condition, condition_label, tube, curve_id, onpg_mM, iptg_mM, enzyme_ml, rel_enzyme) |>
-  mutate(n_used = 0L, V0_estimator = "none", time_points_used = "none", time_points_excluded = "none", lower_bound = NA,
+  mutate(n_used = 0L, V0_estimator = "none", time_points_used = "none", time_points_excluded = "none", origin_assumed = NA,
          note = "No V0: sample discarded before measurement (all observations NA)")
 fits_out <- bind_rows(fits |> select(-obs, -sel), missing_curve) |>
   arrange(desc(data_role == "reference"), dataset, tube)
@@ -107,7 +110,7 @@ cand <- curves |> mutate(cand = map(obs, function(d) map_dfr(3:nrow(d), ~ fit_wi
                                                                 mutate(window = paste0("2-", d$time_min[.x], " min"))))) |>
   select(data_role, dataset, condition, tube, cand) |> unnest(cand) |>
   left_join(fits |> select(dataset, tube, chosen_t_last = t_last, curved), by = c("dataset", "tube")) |>
-  mutate(selected = case_when(curved ~ "secant used instead", t_last == chosen_t_last ~ "yes", TRUE ~ "")) |>
+  mutate(selected = case_when(curved ~ "origin-assumed 0-2 min estimate used instead", t_last == chosen_t_last ~ "yes", TRUE ~ "")) |>
   select(data_role, dataset, condition, tube, window, n_used, slope, intercept, r2, rmse, selected)
 write_csv(cand, file.path(dir_proc, "candidate_windows.csv"), na = "NA")
 
@@ -116,7 +119,7 @@ est_cmp <- fits |> transmute(data_role, dataset, tube, increments,
                              `secant 0-2 (origin)` = secant_0_2, `secant 2-4` = secant_2_4, `secant 2-6` = secant_2_6,
                              `regression 2-6` = slope_2_6, `regression initial window` = slope, `initial window` = sprintf("2-%g min", t_last),
                              `regression all 5 points` = slope_all5, `rule (V0 used)` = V0_dA415_per_min, `rule estimator` = V0_estimator,
-                             `secant 0-2 offset-corrected` = secant_0_2_offset_corrected)
+                             `0-2 min estimate, offset scenario` = secant_0_2_offset_scenario)
 write_csv(est_cmp, file.path(dir_proc, "v0_estimator_comparison.csv"), na = "NA")
 
 # Residuals of the fitted description (secant for curved curves, regression otherwise)
@@ -145,9 +148,9 @@ write_table(est_cmp |> mutate(across(where(is.numeric), ~ round(.x, 4))) |> rena
             "tableS4b_estimator_comparison", digits = 4)
 write_table(offset_summary |> transmute(Dataset = DATA_ROLES[data_role] |> coalesce("both datasets"), `Linear curves (n)` = n_curves,
                                         `Median intercept (A415)` = round(median_intercept, 4), `Min` = round(min_intercept, 4), `Max` = round(max_intercept, 4),
-                                        `Median secant bias (dA415/min)` = round(median_secant_bias_dA_per_min, 4),
-                                        `Max secant bias (dA415/min)` = round(max_secant_bias_dA_per_min, 4)),
+                                        `Scenario shift of a 0-2 min estimate, median intercept (dA415/min)` = round(median_scenario_shift_dA_per_min, 4),
+                                        `Scenario shift, largest intercept (dA415/min)` = round(max_scenario_shift_dA_per_min, 4)),
             "table_origin_offset", digits = 4)
 
-message(sprintf("02_progress_curves.R: %d curves; Tier-2 secant applied to: %s; t=0 offset of linear curves: median %.3f A (range %.3f to %.3f)",
+message(sprintf("02_progress_curves.R: %d curves; Tier-2 origin-assumed estimate applied to: %s; intercepts of linear curves: median %.3f A (range %.3f to %.3f)",
                 nrow(fits), paste(fits$curve_id[fits$curved], collapse = ", "), offset_all$median_intercept, offset_all$min_intercept, offset_all$max_intercept))

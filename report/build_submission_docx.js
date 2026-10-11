@@ -8,7 +8,7 @@ const fs = require("fs");
 const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell, WidthType,
-  AlignmentType, PageBreak, ShadingType, BorderStyle, HeadingLevel, LevelFormat, LineRuleType
+  AlignmentType, PageBreak, ShadingType, BorderStyle, HeadingLevel, LevelFormat, LineRuleType, ExternalHyperlink
 } = require("docx");
 
 const root = path.join(__dirname, "..");
@@ -45,17 +45,22 @@ function baseRuns(text, style) {
   return out;
 }
 function inlineRuns(text, base = {}) {
-  // **bold**, *italic*, `code` (rendered plain)
+  // **bold**, *italic*, `code` (rendered plain); http(s) URLs become clickable hyperlinks
   const runs = [];
-  const re = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g;
+  const re = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|https?:\/\/[^\s)\]>]+)/g;
   let last = 0, m;
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) runs.push(...baseRuns(text.slice(last, m.index), base));
-    const tok = m[0];
+    let tok = m[0];
     if (tok.startsWith("**")) runs.push(...baseRuns(tok.slice(2, -2), { ...base, bold: true }));
     else if (tok.startsWith("*")) runs.push(...baseRuns(tok.slice(1, -1), { ...base, italics: true }));
-    else runs.push(...baseRuns(tok.slice(1, -1), base));
-    last = m.index + tok.length;
+    else if (tok.startsWith("`")) runs.push(...baseRuns(tok.slice(1, -1), base));
+    else {
+      let trail = ""; while (/[.,;:]$/.test(tok)) { trail = tok.slice(-1) + trail; tok = tok.slice(0, -1); }  // sentence punctuation stays outside the link
+      runs.push(new ExternalHyperlink({ link: tok, children: [new TextRun({ text: tok, font: FONT, size: base.size || SIZE, bold: base.bold, italics: base.italics, style: "Hyperlink" })] }));
+      if (trail) runs.push(...baseRuns(trail, base));
+    }
+    last = m.index + tok.length + (m[0].length - tok.length);
   }
   if (last < text.length) runs.push(...baseRuns(text.slice(last), base));
   return runs;
@@ -125,33 +130,26 @@ const noBorders = { top: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" }, 
 
 while (i < md.length) {
   const line = md[i];
-  if (line.startsWith("|")) { flushImages(); const tl = []; while (i < md.length && md[i].startsWith("|")) tl.push(md[i++]); children.push(mdTable(tl)); children.push(new Paragraph({ children: [new TextRun({ text: "", size: 4 })], spacing: { before: 0, after: 80, line: 40, lineRule: LineRuleType.EXACT } })); continue; }
+  if (line.startsWith("|")) { flushImages(); const tl = []; while (i < md.length && md[i].startsWith("|")) tl.push(md[i++]); children.push(mdTable(tl));
+    // spacer after the table, unless a page-breaking heading follows (a spacer alone would make a blank page)
+    let nxt = i; while (nxt < md.length && md[nxt].trim() === "") nxt++;
+    if (!(nxt < md.length && md[nxt].startsWith("## "))) children.push(new Paragraph({ children: [new TextRun({ text: "", size: 4 })], spacing: { before: 0, after: 80, line: 40, lineRule: LineRuleType.EXACT } }));
+    continue; }
   if (line.startsWith("# ")) { children.push(new Paragraph({ children: inlineRuns(line.slice(2), { bold: true, size: 28 }), alignment: AlignmentType.CENTER, spacing: { line: LINE, after: 240, before: 1200 } })); i++; continue; }
   if (line.startsWith("## ")) {
     flushImages();
     const title = line.slice(3);
-    const breakBefore = ["Objectives", "Results", "Discussion", "References", "Flow Sheet", "Raw Data"].includes(title) || title.startsWith("VII.") || (inCover && title !== "Summary");
+    const breakBefore = ["Objectives", "Results", "Discussion", "Data and Code Availability", "Raw Data"].includes(title) || (inCover && title !== "Summary");
     if (title === "Objectives") inCover = false;
     children.push(new Paragraph({ children: inlineRuns(title, { bold: true }), heading: HeadingLevel.HEADING_1, alignment: AlignmentType.LEFT,
       spacing: { line: LINE, before: 240, after: 120 }, pageBreakBefore: breakBefore, keepNext: true }));
     i++; continue;
   }
   if (line.startsWith("### ")) { flushImages(); children.push(new Paragraph({ children: inlineRuns(line.slice(4), { bold: true, italics: true }), heading: HeadingLevel.HEADING_2, alignment: AlignmentType.LEFT, spacing: { line: LINE, before: 120, after: 60 }, keepNext: true })); i++; continue; }
-  if (line.startsWith("[HAND-DRAWN SKETCH")) {
-    flushImages();
-    children.push(para(line, { align: AlignmentType.LEFT, run: { italics: true } }));
-    const boxBorder = { style: BorderStyle.SINGLE, size: 6, color: "888888" };
-    children.push(new Table({ width: { size: TEXT_W, type: WidthType.DXA }, columnWidths: [TEXT_W],
-      rows: [new TableRow({ height: { value: 4200, rule: "exact" }, children: [new TableCell({ width: { size: TEXT_W, type: WidthType.DXA },
-        borders: { top: boxBorder, bottom: boxBorder, left: boxBorder, right: boxBorder },
-        children: [new Paragraph({ children: inlineRuns("Space for the hand-drawn sketch (Question 1)", { size: 20, italics: true }), alignment: AlignmentType.CENTER })] })] })] }));
-    children.push(new Paragraph({ spacing: { after: 120 } }));
-    i++; continue;
-  }
   if (/^!\[/.test(line)) {
     const imgs = [...line.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)].map(m => m[1]);
     if (imgs.length === 1 && imgs[0].includes("figureQ1")) { flushImages(); children.push(imagePara(imgs[0], 4.6)); }
-    else if (imgs.length === 1 && imgs[0].includes("figures/")) { flushImages(); children.push(imagePara(imgs[0], 5.0)); }
+    else if (imgs.length === 1 && imgs[0].includes("figures/")) { flushImages(); children.push(imagePara(imgs[0], 6.5)); }  // main figures are drawn at 6.5 in, the full text width
     else imageRow.push(...imgs);
     i++; continue;
   }
@@ -175,7 +173,8 @@ const doc = new Document({
     paragraphStyles: [
       { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true, run: { font: FONT, size: SIZE, bold: true, color: "000000" }, paragraph: { spacing: { before: 240, after: 120, line: LINE }, outlineLevel: 0 } },
       { id: "Heading2", name: "Heading 2", basedOn: "Normal", next: "Normal", quickFormat: true, run: { font: FONT, size: SIZE, bold: true, italics: true, color: "000000" }, paragraph: { spacing: { before: 120, after: 60, line: LINE }, outlineLevel: 1 } }
-    ] },
+    ],
+    characterStyles: [{ id: "Hyperlink", name: "Hyperlink", basedOn: "DefaultParagraphFont", run: { color: "0563C1", underline: { type: "single" } } }] },
   sections: [{ properties: { page: { size: { width: PAGE_W, height: PAGE_H }, margin: { top: MARGIN, bottom: MARGIN, left: MARGIN, right: MARGIN } } }, children }]
 });
 Packer.toBuffer(doc).then(buf => { const out = path.join(__dirname, "experiment_2_submission.docx"); fs.writeFileSync(out, buf); console.log("wrote", out, Math.round(buf.length / 1024), "kB"); });

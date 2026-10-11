@@ -1,106 +1,106 @@
-data_role,dataset,condition,tube,onpg_mM,iptg_mM,lower_bound,estimator,V0_dA,V0_uM_per_min_reaction,V0_umol_per_min_assay
+data_role,dataset,condition,tube,onpg_mM,iptg_mM,origin_assumed,estimator,V0_dA,V0_uM_per_min_reaction,V0_umol_per_min_assay
 reference,Reference Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,TRUE,P: two-tier rule (primary),0.099,28.435240810508088,0.34122288972609705
 reference,Reference Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,TRUE,R: initial-window regression only,0.092,26.42466822794691,0.3170960187353629
-reference,Reference Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,TRUE,S: 0-2 min secant for every curve,0.099,28.435240810508088,0.34122288972609705
-reference,Reference Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,TRUE,"O: two-tier rule, secant corrected for the t = 0 offset",0.09264999999999994,26.61136425347043,0.31933637104164514
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,TRUE,S: origin-assumed 0-2 min average rate for every curve,0.099,28.435240810508088,0.34122288972609705
+reference,Reference Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,TRUE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.0927,26.625725486203027,0.31950870583443636
 reference,Reference Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,TRUE,A: all five points for every curve,0.092,26.42466822794691,0.3170960187353629
 reference,Reference Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,P: two-tier rule (primary),0.03275,9.406607439839798,0.11287928927807757
 reference,Reference Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,R: initial-window regression only,0.03275,9.406607439839798,0.11287928927807757
-reference,Reference Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,S: 0-2 min secant for every curve,0.0325,9.334801276176897,0.11201761531412277
-reference,Reference Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.03275,9.406607439839798,0.11287928927807757
+reference,Reference Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.0325,9.334801276176897,0.11201761531412277
+reference,Reference Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.03275,9.406607439839798,0.11287928927807757
 reference,Reference Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,A: all five points for every curve,0.02849999999999999,8.185902657570507,0.09823083189084608
 reference,Reference Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,P: two-tier rule (primary),0.02075,5.9599115840206345,0.07151893900824761
 reference,Reference Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,R: initial-window regression only,0.02075,5.9599115840206345,0.07151893900824761
-reference,Reference Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,S: 0-2 min secant for every curve,0.0225,6.462554729660929,0.07755065675593115
-reference,Reference Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.02075,5.9599115840206345,0.07151893900824761
+reference,Reference Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.0225,6.462554729660929,0.07755065675593115
+reference,Reference Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.02075,5.9599115840206345,0.07151893900824761
 reference,Reference Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,A: all five points for every curve,0.01759999999999999,5.055153921868102,0.060661847062417215
 reference,Reference Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,P: two-tier rule (primary),0.0087,2.4988544954688923,0.02998625394562671
 reference,Reference Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,R: initial-window regression only,0.0087,2.4988544954688923,0.02998625394562671
-reference,Reference Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,S: 0-2 min secant for every curve,0.0145,4.164757492448154,0.04997708990937785
-reference,Reference Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.0087,2.4988544954688923,0.02998625394562671
+reference,Reference Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.0145,4.164757492448154,0.04997708990937785
+reference,Reference Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.0087,2.4988544954688923,0.02998625394562671
 reference,Reference Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,A: all five points for every curve,0.0087,2.4988544954688923,0.02998625394562671
 reference,Reference Part III (+IPTG),mm_plus_iptg,E,0.13749999999999998,0.4583333333333333,FALSE,P: two-tier rule (primary),0.00615,1.7664316261073207,0.021197179513287846
 reference,Reference Part III (+IPTG),mm_plus_iptg,E,0.13749999999999998,0.4583333333333333,FALSE,R: initial-window regression only,0.00615,1.7664316261073207,0.021197179513287846
-reference,Reference Part III (+IPTG),mm_plus_iptg,E,0.13749999999999998,0.4583333333333333,FALSE,S: 0-2 min secant for every curve,0.01,2.8722465465159686,0.034466958558191624
-reference,Reference Part III (+IPTG),mm_plus_iptg,E,0.13749999999999998,0.4583333333333333,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.00615,1.7664316261073207,0.021197179513287846
+reference,Reference Part III (+IPTG),mm_plus_iptg,E,0.13749999999999998,0.4583333333333333,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.01,2.8722465465159686,0.034466958558191624
+reference,Reference Part III (+IPTG),mm_plus_iptg,E,0.13749999999999998,0.4583333333333333,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.00615,1.7664316261073207,0.021197179513287846
 reference,Reference Part III (+IPTG),mm_plus_iptg,E,0.13749999999999998,0.4583333333333333,FALSE,A: all five points for every curve,0.00615,1.7664316261073207,0.021197179513287846
 reference,Reference Part III (+IPTG),mm_plus_iptg,F,0.06874999999999999,0.4583333333333333,FALSE,P: two-tier rule (primary),0.0031,0.8903964294199501,0.010684757153039402
 reference,Reference Part III (+IPTG),mm_plus_iptg,F,0.06874999999999999,0.4583333333333333,FALSE,R: initial-window regression only,0.0031,0.8903964294199501,0.010684757153039402
-reference,Reference Part III (+IPTG),mm_plus_iptg,F,0.06874999999999999,0.4583333333333333,FALSE,S: 0-2 min secant for every curve,0.0055,1.5797356005837824,0.018956827207005388
-reference,Reference Part III (+IPTG),mm_plus_iptg,F,0.06874999999999999,0.4583333333333333,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.0031,0.8903964294199501,0.010684757153039402
+reference,Reference Part III (+IPTG),mm_plus_iptg,F,0.06874999999999999,0.4583333333333333,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.0055,1.5797356005837824,0.018956827207005388
+reference,Reference Part III (+IPTG),mm_plus_iptg,F,0.06874999999999999,0.4583333333333333,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.0031,0.8903964294199501,0.010684757153039402
 reference,Reference Part III (+IPTG),mm_plus_iptg,F,0.06874999999999999,0.4583333333333333,FALSE,A: all five points for every curve,0.0031,0.8903964294199501,0.010684757153039402
 reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,P: two-tier rule (primary),0.132,37.913654414010786,0.45496385296812947
 reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,R: initial-window regression only,0.132,37.913654414010786,0.45496385296812947
-reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,S: 0-2 min secant for every curve,0.141,40.49867630587515,0.4859841156705018
-reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.132,37.913654414010786,0.45496385296812947
+reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.141,40.49867630587515,0.4859841156705018
+reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.132,37.913654414010786,0.45496385296812947
 reference,Reference Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,A: all five points for every curve,0.132,37.913654414010786,0.45496385296812947
 reference,Reference Part III (-IPTG),mm_no_inhibitor,B,1.1,0,TRUE,P: two-tier rule (primary),0.101,29.009690119811285,0.34811628143773543
 reference,Reference Part III (-IPTG),mm_no_inhibitor,B,1.1,0,TRUE,R: initial-window regression only,0.07849999999999999,22.54713539015035,0.2705656246818042
-reference,Reference Part III (-IPTG),mm_no_inhibitor,B,1.1,0,TRUE,S: 0-2 min secant for every curve,0.101,29.009690119811285,0.34811628143773543
-reference,Reference Part III (-IPTG),mm_no_inhibitor,B,1.1,0,TRUE,"O: two-tier rule, secant corrected for the t = 0 offset",0.09464999999999994,27.18581356277362,0.32622976275328347
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,1.1,0,TRUE,S: origin-assumed 0-2 min average rate for every curve,0.101,29.009690119811285,0.34811628143773543
+reference,Reference Part III (-IPTG),mm_no_inhibitor,B,1.1,0,TRUE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.0947,27.200174795506225,0.3264020975460747
 reference,Reference Part III (-IPTG),mm_no_inhibitor,B,1.1,0,TRUE,A: all five points for every curve,0.06434999999999998,18.48290652683025,0.22179487832196298
 reference,Reference Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,TRUE,P: two-tier rule (primary),0.078,22.403523062824554,0.2688422767538946
 reference,Reference Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,TRUE,R: initial-window regression only,0.05024999999999999,14.433038896242739,0.17319646675491285
-reference,Reference Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,TRUE,S: 0-2 min secant for every curve,0.078,22.403523062824554,0.2688422767538946
-reference,Reference Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,TRUE,"O: two-tier rule, secant corrected for the t = 0 offset",0.07164999999999994,20.579646505786894,0.24695575806944275
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,TRUE,S: origin-assumed 0-2 min average rate for every curve,0.078,22.403523062824554,0.2688422767538946
+reference,Reference Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,TRUE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.07169999999999999,20.59400773851949,0.24712809286223386
 reference,Reference Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,TRUE,A: all five points for every curve,0.03855000000000001,11.07251043681906,0.13287012524182873
 reference,Reference Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,TRUE,P: two-tier rule (primary),0.055,15.797356005837825,0.1895682720700539
 reference,Reference Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,TRUE,R: initial-window regression only,0.02525000000000001,7.252422529952821,0.08702907035943386
-reference,Reference Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,TRUE,S: 0-2 min secant for every curve,0.055,15.797356005837825,0.1895682720700539
-reference,Reference Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,TRUE,"O: two-tier rule, secant corrected for the t = 0 offset",0.04864999999999993,13.973479448800164,0.16768175338560198
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,TRUE,S: origin-assumed 0-2 min average rate for every curve,0.055,15.797356005837825,0.1895682720700539
+reference,Reference Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,TRUE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.04869999999999998,13.987840681532761,0.16785408817839312
 reference,Reference Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,TRUE,A: all five points for every curve,0.0225,6.462554729660929,0.07755065675593115
 reference,Reference Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,P: two-tier rule (primary),0.058,16.659029969792616,0.1999083596375114
 reference,Reference Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,R: initial-window regression only,0.01249999999999997,3.5903081831449515,0.04308369819773942
-reference,Reference Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,S: 0-2 min secant for every curve,0.058,16.659029969792616,0.1999083596375114
-reference,Reference Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,"O: two-tier rule, secant corrected for the t = 0 offset",0.05164999999999993,14.835153412754957,0.17802184095305948
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,S: origin-assumed 0-2 min average rate for every curve,0.058,16.659029969792616,0.1999083596375114
+reference,Reference Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.05169999999999998,14.849514645487552,0.1781941757458506
 reference,Reference Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,A: all five points for every curve,0.00755,2.1685461426195562,0.026022553711434675
 reference,Reference Part III (-IPTG),mm_no_inhibitor,F,0.06874999999999999,0,TRUE,P: two-tier rule (primary),0.0235,6.749779384312526,0.08099735261175031
 reference,Reference Part III (-IPTG),mm_no_inhibitor,F,0.06874999999999999,0,TRUE,R: initial-window regression only,0.00514999999999999,1.4792069714557206,0.017750483657468646
-reference,Reference Part III (-IPTG),mm_no_inhibitor,F,0.06874999999999999,0,TRUE,S: 0-2 min secant for every curve,0.0235,6.749779384312526,0.08099735261175031
-reference,Reference Part III (-IPTG),mm_no_inhibitor,F,0.06874999999999999,0,TRUE,"O: two-tier rule, secant corrected for the t = 0 offset",0.01714999999999993,4.925902827274866,0.05911083392729839
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,0.06874999999999999,0,TRUE,S: origin-assumed 0-2 min average rate for every curve,0.0235,6.749779384312526,0.08099735261175031
+reference,Reference Part III (-IPTG),mm_no_inhibitor,F,0.06874999999999999,0,TRUE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.01719999999999998,4.940264060007459,0.05928316872008951
 reference,Reference Part III (-IPTG),mm_no_inhibitor,F,0.06874999999999999,0,TRUE,A: all five points for every curve,0.00514999999999999,1.4792069714557206,0.017750483657468646
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,FALSE,P: two-tier rule (primary),0.07709999999999999,22.145020873638114,0.26574025048365735
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,FALSE,R: initial-window regression only,0.07709999999999999,22.145020873638114,0.26574025048365735
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,FALSE,S: 0-2 min secant for every curve,0.0815,23.408809354105145,0.28090571224926175
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.07709999999999999,22.145020873638114,0.26574025048365735
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.0815,23.408809354105145,0.28090571224926175
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.07709999999999999,22.145020873638114,0.26574025048365735
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2.1999999999999997,0.4583333333333333,FALSE,A: all five points for every curve,0.07709999999999999,22.145020873638114,0.26574025048365735
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,P: two-tier rule (primary),0.12099999999999998,34.75418321284321,0.4170501985541185
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,R: initial-window regression only,0.12099999999999998,34.75418321284321,0.4170501985541185
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,S: 0-2 min secant for every curve,0.1345,38.63171605063978,0.46358059260767737
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.12099999999999998,34.75418321284321,0.4170501985541185
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.1345,38.63171605063978,0.46358059260767737
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.12099999999999998,34.75418321284321,0.4170501985541185
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,1.1,0.4583333333333333,FALSE,A: all five points for every curve,0.10815000000000002,31.063346400570204,0.37276015680684244
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,P: two-tier rule (primary),0.04100000000000001,11.776210840715473,0.1413145300885857
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,R: initial-window regression only,0.04100000000000001,11.776210840715473,0.1413145300885857
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,S: 0-2 min secant for every curve,0.04,11.488986186063874,0.1378678342327665
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.04100000000000001,11.776210840715473,0.1413145300885857
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.04,11.488986186063874,0.1378678342327665
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.04100000000000001,11.776210840715473,0.1413145300885857
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,C,0.5499999999999999,0.4583333333333333,FALSE,A: all five points for every curve,0.0355,10.196475240131686,0.12235770288158024
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,P: two-tier rule (primary),0.01815,5.213127481926482,0.06255752978311778
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,R: initial-window regression only,0.01815,5.213127481926482,0.06255752978311778
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,S: 0-2 min secant for every curve,0.0205,5.888105420357736,0.07065726504429283
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.01815,5.213127481926482,0.06255752978311778
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.0205,5.888105420357736,0.07065726504429283
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.01815,5.213127481926482,0.06255752978311778
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,D,0.27499999999999997,0.4583333333333333,FALSE,A: all five points for every curve,0.01815,5.213127481926482,0.06255752978311778
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,P: two-tier rule (primary),0.11264999999999996,32.35585734650237,0.38827028815802844
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,R: initial-window regression only,0.11264999999999996,32.35585734650237,0.38827028815802844
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,S: 0-2 min secant for every curve,0.1295,37.19559277738179,0.44634711332858146
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.11264999999999996,32.35585734650237,0.38827028815802844
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.1295,37.19559277738179,0.44634711332858146
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.11264999999999996,32.35585734650237,0.38827028815802844
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,A,2.1999999999999997,0,FALSE,A: all five points for every curve,0.1031,29.612861894579634,0.3553543427349556
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,1.1,0,FALSE,P: two-tier rule (primary),0.1055,30.302201065743464,0.36362641278892155
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,1.1,0,FALSE,R: initial-window regression only,0.1055,30.302201065743464,0.36362641278892155
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,1.1,0,FALSE,S: 0-2 min secant for every curve,0.112,32.16916132097885,0.38602993585174616
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,1.1,0,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.1055,30.302201065743464,0.36362641278892155
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,1.1,0,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.112,32.16916132097885,0.38602993585174616
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,1.1,0,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.1055,30.302201065743464,0.36362641278892155
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,B,1.1,0,FALSE,A: all five points for every curve,0.1055,30.302201065743464,0.36362641278892155
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,FALSE,P: two-tier rule (primary),0.08935,25.663522893120177,0.3079622747174421
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,FALSE,R: initial-window regression only,0.08935,25.663522893120177,0.3079622747174421
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,FALSE,S: 0-2 min secant for every curve,0.1,28.722465465159683,0.3446695855819162
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.08935,25.663522893120177,0.3079622747174421
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.1,28.722465465159683,0.3446695855819162
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.08935,25.663522893120177,0.3079622747174421
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,C,0.5499999999999999,0,FALSE,A: all five points for every curve,0.08569999999999998,24.615152903641842,0.2953818348437021
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,FALSE,P: two-tier rule (primary),0.08725,25.06035111835182,0.3007242134202219
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,FALSE,R: initial-window regression only,0.08725,25.06035111835182,0.3007242134202219
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,FALSE,S: 0-2 min secant for every curve,0.101,29.009690119811285,0.34811628143773543
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,FALSE,"O: two-tier rule, secant corrected for the t = 0 offset",0.08725,25.06035111835182,0.3007242134202219
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,FALSE,S: origin-assumed 0-2 min average rate for every curve,0.101,29.009690119811285,0.34811628143773543
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,FALSE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.08725,25.06035111835182,0.3007242134202219
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,D,0.27499999999999997,0,FALSE,A: all five points for every curve,0.07060000000000001,20.27806061840274,0.24333672742083287
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,P: two-tier rule (primary),0.0555,15.940968333163624,0.1912916199979635
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,R: initial-window regression only,0.03449999999999999,9.909250585480088,0.11891100702576105
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,S: 0-2 min secant for every curve,0.0555,15.940968333163624,0.1912916199979635
-experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,"O: two-tier rule, secant corrected for the t = 0 offset",0.04914999999999993,14.117091776125964,0.16940510131351155
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,S: origin-assumed 0-2 min average rate for every curve,0.0555,15.940968333163624,0.1912916199979635
+experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,"O: two-tier rule, baseline-offset scenario for the 0-2 min estimates",0.04919999999999998,14.131453008858557,0.1695774361063027
 experimental,Experimental Part III (-IPTG),mm_no_inhibitor,E,0.13749999999999998,0,TRUE,A: all five points for every curve,0.0285,8.18590265757051,0.09823083189084612

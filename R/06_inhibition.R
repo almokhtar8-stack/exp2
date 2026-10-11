@@ -150,7 +150,7 @@ table5_ki <- prim |> transmute(
   `Ki if noncompetitive (mM)` = round(Ki_from_Vmax_noncompetitive, 3))
 write_table(table5, "table5_kinetic_parameters", digits = 4)
 write_table(table5_ki, "table5b_inhibition", digits = 4)
-write_table(sens |> transmute(Estimator = estimator, Method = method, `Km (mM)` = round(Km, 3), `Km,app (mM)` = round(Km_app, 3),
+write_table(sens |> transmute(Estimator = sub(":.*$", "", estimator), Method = method, `Km (mM)` = round(Km, 3), `Km,app (mM)` = round(Km_app, 3),
                               `Vmax (umol/min)` = round(Vmax, 3), `Vmax,app (umol/min)` = round(Vmax_app, 3), `Km,app/Km` = round(Km_ratio, 2),
                               `Vmax,app/Vmax` = round(Vmax_ratio, 2), `Ki (mM)` = round(Ki_competitive, 3), `R2 (-I)` = round(r2, 3), `R2 (+I)` = round(r2_app, 3),
                               `Physical (-I / +I)` = paste(physical, physical_app, sep = " / "), Primary = ifelse(primary, "yes", "")),
@@ -171,7 +171,7 @@ write_table(glob |> transmute(Model = model, Parameter = parameter, Estimate = r
 # Compact Results table for the substrate series: raw absorbances with V0 and reciprocals
 tidy <- read_csv(file.path(dir_proc, "absorbance_tidy.csv"), show_col_types = FALSE)
 prim_v0 <- ref |> filter(estimator == PRIMARY) |>
-  transmute(condition, tube, V0_dA, V0_umol_per_min_assay, lower_bound, inv_V = 1 / V0_umol_per_min_assay)
+  transmute(condition, tube, V0_dA, V0_umol_per_min_assay, origin_assumed, inv_V = 1 / V0_umol_per_min_assay)
 table_results_substrate <- tidy |> filter(data_role == "reference", condition != "enzyme_dilution") |>
   select(condition, tube, onpg_mM, time_min, absorbance_415nm) |>
   pivot_wider(names_from = time_min, values_from = absorbance_415nm, names_glue = "{time_min} min") |>
@@ -179,8 +179,8 @@ table_results_substrate <- tidy |> filter(data_role == "reference", condition !=
   arrange(desc(condition == "mm_no_inhibitor"), tube) |>
   transmute(Series = if_else(condition == "mm_no_inhibitor", "no inhibitor", "+ 0.458 mM IPTG"), Tube = tube,
             `[S] (mM)` = signif(onpg_mM, 4), `2 min`, `4 min`, `6 min`, `8 min`, `10 min`,
-            `V0 (dA/min)` = paste0(formatC(V0_dA, digits = 4, format = "g"), if_else(lower_bound, "†", "")),
-            `V0 (umol/min)` = paste0(formatC(V0_umol_per_min_assay, digits = 3, format = "f"), if_else(lower_bound, "†", "")),
+            `V0 (dA/min)` = paste0(formatC(V0_dA, digits = 4, format = "g"), if_else(origin_assumed, "†", "")),
+            `V0 (umol/min)` = paste0(formatC(V0_umol_per_min_assay, digits = 3, format = "f"), if_else(origin_assumed, "†", "")),
             `1/[S]` = round(1 / onpg_mM, 2), `1/V0` = round(inv_V, 2))
 write_table(table_results_substrate, "table_results_substrate", digits = 4)
 

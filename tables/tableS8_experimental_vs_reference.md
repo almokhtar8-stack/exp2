@@ -6,12 +6,12 @@
 | Enzyme dilution (Part II) | D | 0.0243 | 0.0275 | 1.13 | regression 2-6 min | regression 2-10 min | 0.262 | 0.283 |
 | Enzyme dilution (Part II) | E | 0.0229 | 0.0197 | 0.86 | regression 2-10 min | regression 2-10 min | 0.248 | 0.205 |
 | ONPG series, no inhibitor | A | 0.132 | 0.1126 | 0.85 | regression 2-10 min | regression 2-8 min | 1.328 | 1.061 |
-| ONPG series, no inhibitor | B | 0.101 | 0.1055 | 1.04 | 0-2 min secant (no initial linear portion) | regression 2-10 min | 0.723 | 1.065 |
-| ONPG series, no inhibitor | C | 0.078 | 0.0894 | 1.15 | 0-2 min secant (no initial linear portion) | regression 2-8 min | 0.468 | 0.88 |
-| ONPG series, no inhibitor | D | 0.055 | 0.0872 | 1.59 | 0-2 min secant (no initial linear portion) | regression 2-6 min | 0.301 | 0.764 |
-| ONPG series, no inhibitor | E | 0.058 | 0.0555 | 0.96 | 0-2 min secant (no initial linear portion) | 0-2 min secant (no initial linear portion) | 0.18 | 0.346 |
-| ONPG series, no inhibitor | F | 0.0235 | NA | NA | 0-2 min secant (no initial linear portion) | NA | 0.09 | NA |
-| ONPG series + IPTG | A | 0.099 | 0.0771 | 0.78 | 0-2 min secant (no initial linear portion) | regression 2-10 min | 0.966 | 0.78 |
+| ONPG series, no inhibitor | B | 0.101 | 0.1055 | 1.04 | 0-2 min average rate, origin assumed (no initial linear portion) | regression 2-10 min | 0.723 | 1.065 |
+| ONPG series, no inhibitor | C | 0.078 | 0.0894 | 1.15 | 0-2 min average rate, origin assumed (no initial linear portion) | regression 2-8 min | 0.468 | 0.88 |
+| ONPG series, no inhibitor | D | 0.055 | 0.0872 | 1.59 | 0-2 min average rate, origin assumed (no initial linear portion) | regression 2-6 min | 0.301 | 0.764 |
+| ONPG series, no inhibitor | E | 0.058 | 0.0555 | 0.96 | 0-2 min average rate, origin assumed (no initial linear portion) | 0-2 min average rate, origin assumed (no initial linear portion) | 0.18 | 0.346 |
+| ONPG series, no inhibitor | F | 0.0235 | NA | NA | 0-2 min average rate, origin assumed (no initial linear portion) | NA | 0.09 | NA |
+| ONPG series + IPTG | A | 0.099 | 0.0771 | 0.78 | 0-2 min average rate, origin assumed (no initial linear portion) | regression 2-10 min | 0.966 | 0.78 |
 | ONPG series + IPTG | B | 0.0328 | 0.121 | 3.69 | regression 2-6 min | regression 2-8 min | 0.294 | 1.106 |
 | ONPG series + IPTG | C | 0.0208 | 0.041 | 1.98 | regression 2-6 min | regression 2-6 min | 0.187 | 0.362 |
 | ONPG series + IPTG | D | 0.0087 | 0.0181 | 2.09 | regression 2-10 min | regression 2-10 min | 0.099 | 0.188 |

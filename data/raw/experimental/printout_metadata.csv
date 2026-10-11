@@ -9,7 +9,7 @@ Day 2 Blue,B,blue,GENESYS 10S UV-Vis,v4.005,2L6R296203,3:36am 11Sep26,415.0,5,Da
 Day 2 Blue,C,blue,GENESYS 10S UV-Vis,v4.005,2L6R296203,3:39am 11Sep26,415.0,5,Day2_Blue_C.jpeg,all five values match CSV
 Day 2 Blue,D,blue,GENESYS 10S UV-Vis,v4.005,2L6R296203,3:46am 11Sep26,415.0,5,Day2_Blue_D.jpeg,all five values match CSV
 Day 2 Blue,E,blue,GENESYS 10S UV-Vis,v4.005,2L6R296203,3:51am 11Sep26,415.0,5,Day2_Blue_E.jpeg,all five values match CSV
-Day 2 Black,A,black,GENESYS 10S UV-Vis,v4.005,2L6R296203,4:29am 11Sep26,415.0,5,Day2_Black_A.jpeg,"four values match CSV; ID 3 legible as 0.47x with last digit under glare, consistent with CSV 0.478 but not independently confirmable from the photo"
+Day 2 Black,A,black,GENESYS 10S UV-Vis,v4.005,2L6R296203,4:29am 11Sep26,415.0,5,Day2_Black_A.jpeg,"all five values match CSV; ID 3 last digit under glare in the photograph (legible as 0.47x), read as 0.476 from the original printout"
 Day 2 Black,B,black,GENESYS 10S UV-Vis,v4.005,2L6R296203,4:25am 11Sep26,415.0,5,Day2_Black_B.jpeg,all five values match CSV
 Day 2 Black,C,black,GENESYS 10S UV-Vis,v4.005,2L6R296203,4:33am 11Sep26,415.0,5,Day2_Black_C.jpeg,all five values match CSV
 Day 2 Black,D,black,GENESYS 10S UV-Vis,v4.005,2L6R296203,4:20am 11Sep26,415.0,5,Day2_Black_D.jpeg,all five values match CSV

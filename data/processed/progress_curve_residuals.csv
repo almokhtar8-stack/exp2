@@ -24,11 +24,11 @@ experimental,Experimental Part II,enzyme_dilution,E,4,0.09,0.08810000000000005,0
 experimental,Experimental Part II,enzyme_dilution,E,6,0.127,0.12760000000000005,-6.000000000000449e-4,TRUE,FALSE
 experimental,Experimental Part II,enzyme_dilution,E,8,0.169,0.16710000000000003,0.001899999999999985,TRUE,FALSE
 experimental,Experimental Part II,enzyme_dilution,E,10,0.205,0.2066,-0.001600000000000018,TRUE,FALSE
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2,0.163,0.16540000000000024,-0.0024000000000002353,TRUE,FALSE
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,4,0.32,0.3196000000000002,3.999999999997894e-4,TRUE,FALSE
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,6,0.478,0.47380000000000017,0.004199999999999815,TRUE,FALSE
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,8,0.628,0.6280000000000002,-2.220446049250313e-16,TRUE,FALSE
-experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,10,0.78,0.7822000000000002,-0.002200000000000202,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,2,0.163,0.16500000000000017,-0.0020000000000001683,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,4,0.32,0.31920000000000015,7.999999999998564e-4,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,6,0.476,0.4734000000000001,0.00259999999999988,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,8,0.628,0.6276,3.9999999999995595e-4,TRUE,FALSE
+experimental,Experimental Part III (+IPTG),mm_plus_iptg,A,10,0.78,0.7818,-0.0018000000000000238,TRUE,FALSE
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,2,0.269,0.26650000000000007,0.0024999999999999467,TRUE,FALSE
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,4,0.506,0.5085,-0.0024999999999999467,TRUE,FALSE
 experimental,Experimental Part III (+IPTG),mm_plus_iptg,B,6,0.748,0.7505,-0.0024999999999999467,TRUE,FALSE
