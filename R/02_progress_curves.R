@@ -1,17 +1,5 @@
 # 02_progress_curves.R
-# Initial velocity (V0) for every progress curve of both datasets by the rule
-# described in 00_setup.R: regression on the initial linear window where one
-# exists (Tier 1), otherwise the origin-assumed 0-2 min average rate (Tier 2).
-# Alternative estimators are computed for every curve and kept for the
-# sensitivity analysis: the regression on each candidate window (2-6, 2-8,
-# 2-10 min), two-point secants (0-2, 2-4, 2-6 min), the regression on all five
-# points, and the Tier-2 estimate under the baseline-offset scenario.
-#
-# Inputs : data/processed/absorbance_tidy.csv
-# Outputs: data/processed/progress_curve_fits.csv, candidate_windows.csv,
-#          v0_estimator_comparison.csv, origin_offset_scenario.csv, progress_curve_residuals.csv
-#          tables/table_v0_reference, tableS3_v0_experimental, tableS4_candidate_windows,
-#          tableS4b_estimator_comparison, table_origin_offset
+
 source(here::here("R", "00_setup.R"))
 
 tidy <- read_csv(file.path(dir_proc, "absorbance_tidy.csv"), show_col_types = FALSE)
@@ -73,15 +61,7 @@ fits <- curves |>
       time_points_excluded != "none" ~ paste0("Point(s) at ", time_points_excluded, " min departed from the initial trend and were excluded from the regression; raw values retained"),
       TRUE ~ "All five points within the initial linear window"))
 
-# Baseline-offset sensitivity scenario for the Tier-2 estimate. No curve has a
-# reading at t = 0. For the curves that do have an initial linear portion, the
-# regression intercept is an estimate of their own t = 0 absorbance (reaction
-# before the timer, matrix difference between the stopped sample and the
-# Z-buffer blank, read-out offset). The scenario transfers the median of those
-# intercepts to the Tier-2 curves as an assumed t = 0 absorbance and recomputes
-# the 0-2 min average rate as (A415(2 min) - median intercept)/2 min. Intercepts
-# of other reactions do not bound the unknown baseline of a Tier-2 curve, so
-# this is a what-if calculation, not an uncertainty interval or a correction.
+
 linear_intercepts <- fits |> filter(!curved) |>
   select(data_role, dataset, tube, n_used, intercept, slope, r2)
 offset_summary <- linear_intercepts |> group_by(data_role) |>
