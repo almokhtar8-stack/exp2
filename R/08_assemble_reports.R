@@ -1,5 +1,4 @@
 # 08_assemble_reports.R
-
 source(here::here("R", "00_setup.R"))
 
 rd <- function(f, ...) read_csv(file.path(dir_proc, f), show_col_types = FALSE, ...)
@@ -131,8 +130,7 @@ fill_template <- function(tmpl) {
   if (length(left)) stop("Unfilled placeholder(s): ", paste(head(left, 3), collapse = " | "))
   tmpl
 }
-for (pair in list(c("submission_template.md", "experiment_2_submission.md"), c("full_template.md", "experiment_2_report_full.md"),
-                  c("cell_style/cell_template.tex", "cell_style/experiment_2_cell_style.tex"), c("figures_template.tex", "experiment_2_figures.tex"))) {
+for (pair in list(c("submission_template.md", "experiment_2_submission.md"))) {
   if (!file.exists(file.path(dir_rep, pair[1]))) { message("template missing: ", pair[1]); next }
   out <- fill_template(readLines(file.path(dir_rep, pair[1]), encoding = "UTF-8"))
   writeLines(out, file.path(dir_rep, pair[2]), useBytes = FALSE)

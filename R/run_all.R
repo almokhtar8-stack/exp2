@@ -2,13 +2,12 @@
 
 scripts <- c("00_setup.R", "01_import_clean.R", "02_progress_curves.R", "03_standard_curve.R",
              "04_enzyme_dilution.R", "05_michaelis_menten.R", "06_inhibition.R",
-             "07_generate_figures.R", "07b_supplementary_figures.R", "09_graphical_abstract.R",
+             "07_generate_figures.R", "07b_supplementary_figures.R",
              "08_assemble_reports.R")
 for (s in scripts) {
   message("\n==> ", s)
   source(here::here("R", s), echo = FALSE)
 }
-writeLines(capture.output(sessionInfo()), here::here("report", "sessionInfo.txt"))
 
 run_quiet <- function(cmd, args, wd) {
   old <- setwd(wd); on.exit(setwd(old))
@@ -17,17 +16,6 @@ run_quiet <- function(cmd, args, wd) {
 }
 
 report_dir <- here::here("report")
-if (nzchar(Sys.which("xelatex"))) {
-  ok1 <- all(vapply(1:2, function(k) run_quiet("xelatex", c("-interaction=nonstopmode", "experiment_2_cell_style.tex"),
-                                               file.path(report_dir, "cell_style")), logical(1)))
-  ok2 <- all(vapply(1:2, function(k) run_quiet("xelatex", c("-interaction=nonstopmode", "experiment_2_figures.tex"),
-                                               report_dir), logical(1)))
-  message(if (ok1) "Journal-style PDF: report/cell_style/experiment_2_cell_style.pdf" else "xelatex failed on the journal-style manuscript (see report/cell_style/experiment_2_cell_style.log)")
-  message(if (ok2) "Figure booklet: report/experiment_2_figures.pdf" else "xelatex failed on the figure booklet (see report/experiment_2_figures.log)")
-} else {
-  message("xelatex not found: the journal-style manuscript and figure booklet were not typeset (the .tex files are ready to compile)")
-}
-
 if (nzchar(Sys.which("node"))) {
   ok <- run_quiet("node", "build_submission_docx.js", report_dir)
   message(if (ok) "Course submission: report/experiment_2_submission.docx" else "node failed to build the .docx (run `npm install docx` in report/ and retry)")
@@ -43,9 +31,4 @@ if (nzchar(Sys.which("node"))) {
   message("node not found: the course-submission .docx was not rebuilt (report/experiment_2_submission.md is complete)")
 }
 
-if (nzchar(Sys.which("python3")) && nzchar(Sys.which("pandoc"))) {
-  ok_supp <- run_quiet("python3", "build_supplementary_pdf.py", report_dir)
-  message(if (ok_supp) "Supplementary PDF: report/experiment_2_supplementary.pdf" else "Supplementary PDF not rendered (needs pandoc and Python Playwright with Chromium); report/experiment_2_report_full.md is complete")
-}
-
-message("\nAll scripts completed. Outputs: data/processed/, tables/, figures/, report/experiment_2_submission.md, report/experiment_2_report_full.md")
+message("\nAll scripts completed. Outputs: data/processed/, tables/, figures/, report/experiment_2_submission.md")
