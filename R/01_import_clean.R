@@ -1,16 +1,5 @@
 # 01_import_clean.R
-# Import the reference dataset (course-provided) and the experimental dataset
-# (our instrument printouts), validate both against the design in the manual,
-# attach tube compositions and reaction concentrations, and write the audit
-# tables and the raw-data tables used in the reports.
-#
-# Inputs : data/raw/reference/*.csv, data/raw/experimental/*.csv, data/raw/tube_compositions.csv
-# Outputs: data/processed/absorbance_tidy.csv, onp_spectrum.csv, onp_standards.csv,
-#          tube_conditions.csv, standard_tube_comparison.csv, validation_report.csv
-#          tables/table_standard_curve_mapping, table_audit_reference, table_audit_experimental,
-#          table_dataset_crosswalk, table_tube_compositions,
-#          table_r1_spectrum, table_r2_standard_curve, table_r3_enzyme_dilution_raw,
-#          table_r4_substrate_series_raw, tableS2_experimental_raw_absorbance
+
 source(here::here("R", "00_setup.R"))
 
 comp <- read_csv(file.path(dir_raw, "tube_compositions.csv"), show_col_types = FALSE,
@@ -23,8 +12,7 @@ std  <- read_csv(file.path(dir_ref, "part1_onp_standard_curve.csv"), show_col_ty
 ed_r <- read_csv(file.path(dir_ref, "part2_enzyme_dilution.csv"), show_col_types = FALSE)
 p3_r <- read_csv(file.path(dir_ref, "part3_substrate_series.csv"), show_col_types = FALSE)
 
-# Cross-check the transcriptions against the course's original files when they are
-# present (the originals are not redistributed with the repository)
+
 src_dir <- file.path(dir_ref, "source_files")
 if (file.exists(file.path(src_dir, "instructor_part1_values.csv"))) {
   src_csv <- read_csv(file.path(src_dir, "instructor_part1_values.csv"), show_col_types = FALSE)
@@ -45,11 +33,7 @@ if (file.exists(file.path(src_dir, "instructor_part1_values.csv"))) {
   source_check_note <- "course source files not present; transcription not re-verified in this run"
 }
 
-# Standard-curve mapping: the course's table lists seven readings (tubes 1-7) while
-# the manual describes a blank and seven standards. The reported tube 1 (OD 0) is
-# the zero-concentration preparation (confirmed by the instructor); the remaining
-# six readings follow the manual's standards 1-6 in order, anchored by the spectrum
-# tube: manual tube 4 read 1.723 at 415 nm, identical to reported tube 5.
+
 std <- std |> mutate(total_ml = onp_ml + z_buffer_ml + na2co3_ml,
                      onp_mM_cuvette = STOCK_ONP_MM * onp_ml / total_ml,
                      reported = !is.na(abs_415nm))
@@ -76,7 +60,7 @@ meta  <- read_csv(file.path(dir_exp, "printout_metadata.csv"), show_col_types = 
 check_that(all(raw_e$time_min %in% TIME_POINTS_MIN), "an experimental time point is not in the design")
 check_that(all(raw_e$source_label %in% EXPERIMENTAL_LABEL_MAP$source_label), "an experimental printout label is not in the label map")
 
-# Compositions and concentrations ---------------------------------------------
+# Compositions and concentrations --------------
 comp <- comp |> mutate(total_ml = z_buffer_ml + onpg_ml + iptg_ml + enzyme_ml + onp_ml + na2co3_ml)
 check_that(all(abs(comp$total_ml[comp$part != "Part I"] - REACTION_VOLUME_ML) < 1e-9), "a Part II/III tube does not total 12.0 mL")
 check_that(all(abs(comp$total_ml[comp$part == "Part I"] - STANDARD_VOLUME_ML) < 1e-9), "a Part I standard does not total 3.0 mL")
@@ -134,7 +118,7 @@ write_table(DATASET_CROSSWALK |> rename(`Role` = data_role, `Dataset label in th
                                         `Label on the source` = source_label, `File` = source_file),
             "table_dataset_crosswalk")
 
-# Audit tables ----------------------------------------------------------------------
+# Audit tables -------------------------------
 increments <- function(d) d |> filter(measured) |> group_by(dataset, tube) |> arrange(time_min, .by_group = TRUE) |>
   summarise(increments = paste(fmt_num(diff(absorbance_415nm), 3), collapse = " / "),
             inc2_over_inc1 = diff(absorbance_415nm)[2] / diff(absorbance_415nm)[1],
