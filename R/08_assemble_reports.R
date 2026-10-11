@@ -1,14 +1,5 @@
 # 08_assemble_reports.R
-# Fill the report templates from the processed results so that every number in
-# the prose comes from the pipeline:
-#   report/submission_template.md         -> report/experiment_2_submission.md     (B241 course report)
-#   report/full_template.md               -> report/experiment_2_report_full.md    (technical record / supplementary)
-#   report/cell_style/cell_template.tex   -> report/cell_style/experiment_2_cell_style.tex (journal-style version)
-#   report/figures_template.tex           -> report/experiment_2_figures.tex       (all figures with captions)
-# Placeholders: {{name}} or {{name|digits}} for a number; {{TABLE:file}} inserts
-# tables/<file>.md; {{LATEXROWS:file}} inserts the rows of tables/<file>.csv as
-# LaTeX table rows; {{CAPTIONS}} inserts figures/README.md; {{REPO}} inserts the
-# repository statement.
+
 source(here::here("R", "00_setup.R"))
 
 rd <- function(f, ...) read_csv(file.path(dir_proc, f), show_col_types = FALSE, ...)
