@@ -1,17 +1,5 @@
 # 05_michaelis_menten.R
-# Part III without inhibitor (reference dataset, tubes A-F): V0 converted to
-# product-formation units with the measured extinction coefficient,
-# Lineweaver-Burk regression (course method) and direct nonlinear
-# Michaelis-Menten fit. Also prepares the table of V0 under every estimator,
-# for both conditions and both datasets, used by 06_inhibition.R.
-#
-# Units: V0 (mM/min in the cuvette) = slope / epsilon; reaction rate = x 1.5
-# (2 mL reaction + 1 mL stop reagent); umol/min per 12.0 mL assay = reaction
-# rate x 12. Km and Ki do not depend on this factor; Vmax scales with it.
-#
-# Inputs : data/processed/progress_curve_fits.csv, onp_calibration.csv, absorbance_tidy.csv
-# Outputs: data/processed/v0_scenarios.csv, kinetic_parameters_no_inhibitor.csv, depletion_estimates.csv
-#          tables/tableS5_substrate_depletion
+
 source(here::here("R", "00_setup.R"))
 
 fits  <- read_csv(file.path(dir_proc, "progress_curve_fits.csv"), show_col_types = FALSE)
