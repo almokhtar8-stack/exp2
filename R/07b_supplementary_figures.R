@@ -1,11 +1,5 @@
 # 07b_supplementary_figures.R
-# Supplementary figures:
-#   S1  experimental progress curves beside the reference curves, same axes
-#   S2  increment diagnostics behind every V0 window decision
-#   S3  sensitivity of Km, Km,app and Ki to the V0 estimator (reference dataset)
-#   S4  Michaelis-Menten analysis of the experimental dataset and tube-by-tube comparison
-#   Q1  Michaelis-Menten diagram for Question 1 (schematic, Km = Vmax = 1)
-# and figures/README.md with captions for all figures, filled from the results.
+
 source(here::here("R", "00_setup.R"))
 theme_set(theme_nebula_science(base_size = 10))
 
@@ -25,7 +19,7 @@ eps <- V("eps"); I_mM <- V("I_mM"); PRIMARY <- "P: two-tier rule (primary)"
 lab_A415 <- "Absorbance at 415 nm (stopped sample)"
 lab_V0u  <- expression("Initial reaction rate, "*italic(V)[0]~"("*mu*mol~min^-1*")")
 
-# S1: experimental versus reference progress curves ------------------------------------------------
+# S1: experimental versus reference progress curves ------------------
 obs <- tidy |> filter(measured) |>
   left_join(fits |> select(dataset, tube, origin_assumed, slope, intercept, t_last, V0_dA415_per_min), by = c("dataset", "tube")) |>
   mutate(used = if_else(origin_assumed, time_min == 2, time_min <= t_last),
@@ -104,7 +98,7 @@ pS3 <- ggplot(sl |> filter(sign == "positive"), aes(value, code)) +
        x = "Value (mM)", y = NULL) + theme(legend.position = "right")
 save_figure(pS3, "figureS3_estimator_sensitivity", 7.4, 3.2, dir = dir_supp)
 
-# S4: experimental dataset kinetics and tube-by-tube ratios ------------------------------------------------
+# S4: experimental dataset kinetics and tube-by-tube ratios --------------------
 sp <- v0s |> filter(data_role == "experimental", estimator == PRIMARY) |>
   mutate(excluded = condition == "mm_plus_iptg" & tube %in% EXPERIMENTAL_EXCLUDE_FROM_FIT$tube, condition = factor(condition, levels = names(COND_LABELS)))
 su <- expk |> filter(tube_B == "excluded")
@@ -138,9 +132,7 @@ pS4b <- ggplot(cmp2, aes(tube, ratio_experimental_over_reference, fill = conditi
 save_figure(pS4a + pS4b + plot_layout(widths = c(1.15, 1)), "figureS4_experimental_kinetics", 7.4, 3.4, dir = dir_supp)
 
 # Q1 diagram: the Michaelis-Menten curve asked for in Question 1, drawn at its printed size ---------------------
-# (4.6 x 2.9 in; type 7.5-9 pt). Everything the question asks for is marked: V = Vmax[S]/(Km + [S])
-# to [S] = 4 Km, the asymptote V = Vmax, the point ([S] = Km, V = Vmax/2), the tangent at the
-# origin with slope Vmax/Km meeting V = Vmax at [S] = Km, and V(4 Km) = 0.8 Vmax.
+
 Km_s <- 1; Vmax_s <- 1
 q <- tibble(S = seq(0, 4 * Km_s, length.out = 400), V = Vmax_s * S / (Km_s + S))
 marks <- tibble(S = c(Km_s, 4 * Km_s, Km_s), V = c(Vmax_s / 2, 0.8 * Vmax_s, Vmax_s))
