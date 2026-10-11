@@ -1,21 +1,5 @@
 # 06_inhibition.R
-# Part III with IPTG (reference dataset, tubes A-F): apparent Km and Vmax by
-# Lineweaver-Burk (course method) and by nonlinear fitting of the inhibited
-# series on its own, Ki by the manual's competitive relation, global fits of
-# the competitive, pure noncompetitive and mixed models to both series at once,
-# the sensitivity of every parameter to the V0 estimator, and the same analysis
-# of the experimental dataset for the Discussion.
-#
-# Manual: Km_app = Km (1 + [I]/Ki) -> Ki = [I]/(Km_app/Km - 1); [I] = 5.5 x 1.0/12.0 = 0.458 mM.
-#
-# Inputs : data/processed/v0_scenarios.csv, progress_curve_fits.csv
-# Outputs: data/processed/kinetic_parameters.csv, inhibition_parameters.csv, sensitivity_analysis.csv,
-#          global_fits.csv, global_fit_residuals.csv, experimental_secondary_kinetics.csv,
-#          experimental_tubeB_control_ratio.csv,
-#          experimental_vs_reference_v0.csv
-#          tables/table5_kinetic_parameters, table5b_inhibition, table_results_substrate,
-#          tableS6_sensitivity, tableS7_experimental_secondary, tableS8_experimental_vs_reference,
-#          tableS9_global_fits
+
 source(here::here("R", "00_setup.R"))
 
 v0   <- read_csv(file.path(dir_proc, "v0_scenarios.csv"), show_col_types = FALSE)
