@@ -1,9 +1,5 @@
 # 00_setup.R
-# Shared settings for the Experiment 2 analysis: packages, project paths,
-# quantities taken from the laboratory manual, dataset roles and provenance,
-# the initial-velocity rule, kinetic model functions and the figure theme.
-# Every other script sources this file. Nothing derived from the data is
-# hard-coded here.
+
 
 # Package dependencies (installed from CRAN or the distribution's r-cran-* packages)
 required_packages <- c("tidyverse", "broom", "patchwork", "scales", "here")
@@ -118,38 +114,16 @@ convert_v0 <- function(slope_dA_per_min, epsilon) {
          V0_umol_per_min_per_mL_enzyme = rxn * REACTION_VOLUME_ML / ENZYME_ML_STANDARD)
 }
 
-# Initial-velocity rule (02_progress_curves.R). The manual asks for V0 from the
-# initial linear portion of each progress curve, with the points used identified.
-# The rule below applies that instruction identically to every curve:
-#   Tier 1  initial linear window: regression on the 2, 4 and 6 min points,
-#           extended one point at a time while the next increment lies within
-#           REL_TOL of the increment predicted by the current line (or within
-#           ABS_TOL absorbance units of it, whichever is larger, so that
-#           low-signal curves are not cut by read-out noise). V0 = slope.
-#   Tier 2  no initial linear portion: when the second and third increments both
-#           fall below the first by more than the tolerance, no linear window
-#           can be fitted. V0 is then the 0-2 min average rate, A415(2 min)/2 min,
-#           which assumes A415 = 0 at t = 0 because no reading exists there. This
-#           is an origin-assumed average rate over the first interval, not a
-#           measured instantaneous initial velocity; it is flagged (†) wherever
-#           it is used. 02_progress_curves.R adds a sensitivity scenario in
-#           which the t = 0 absorbance is set to the median intercept of the
-#           curves that are linear (an assumption transferred between
-#           reactions, not a measured baseline), carried through as estimator O
-#           the sensitivity analysis.
+
 REL_TOL    <- 0.20
 ABS_TOL    <- 0.010
 MIN_POINTS <- 3
 
-# Observation excluded from the experimental kinetic fits (retained in the raw
-# data and in every figure). Experimental Part III (+IPTG) tube B ran faster
-# than tube A at half the nominal substrate concentration, so its nominal
-# composition cannot be verified.
+
 EXPERIMENTAL_EXCLUDE_FROM_FIT <- tibble(
   dataset = "Experimental Part III (+IPTG)", tube = "B",
   reason  = "V0 exceeds tube A at half the nominal substrate; nominal [S] unverifiable")
 
-# Validation helpers used by the import script
 check_that <- function(condition, message) if (!isTRUE(condition)) stop("Data validation failed: ", message, call. = FALSE)
 flag_absorbance <- function(a) {
   case_when(is.na(a) ~ "missing",
@@ -159,11 +133,7 @@ flag_absorbance <- function(a) {
             TRUE ~ "ok")
 }
 
-# Figure styling: Scientific Nebula palette on white
-# Purple-anchored palette whose data colours stay separable under simulated
-# deuteranopia, protanopia and tritanopia (minimum CIE76 distance >= 25 between
-# any two tube colours, > 80 between the two conditions); every series also has
-# its own marker shape, so no information is carried by colour alone.
+
 nebula <- c(
   violet = "#5B21B6", purple = "#7C3AED", blue = "#0072B2", sky = "#56B4E9", cyan = "#0891B2",
   orange = "#E69F00", vermilion = "#D55E00", magenta = "#C026D3", rose = "#E11D48", indigo = "#312E81",
@@ -266,9 +236,7 @@ fit_lineweaver_burk <- function(S, V0) {
          intercept_p = s[1, 4])
 }
 
-# Direct nonlinear least squares on the velocity scale (unweighted). A fit that
-# runs to the upper bound of Km means that no plateau exists within the tested
-# [S] range; such a fit is reported as "no plateau" rather than as a number.
+
 KM_UPPER_BOUND <- 100   # mM
 fit_mm_nls <- function(S, V0) {
   d <- tibble(S = S, V0 = V0)
