@@ -1,22 +1,5 @@
 # 07_generate_figures.R
-# Main figures 1-4 (reference dataset). Each is a two-panel figure drawn at its
-# final printed size, 6.5 x 1.85 in (the full text width of the course report),
-# so that every type size below is the size on the page: panel titles 9 pt,
-# axis titles 8.5 pt, tick labels and legends 7.5 pt (600 dpi PNG plus vector PDF).
-# Conventions in every progress-curve panel: filled symbol, observation used
-# for V0; open symbol, observation retained but not used; solid line, fitted
-# initial window; dashed segment from a grey cross at the origin, origin-assumed
-# 0-2 min average rate (no reading exists at t = 0); dotted line, extrapolation
-# of the fit. Origin-assumed estimates carry a dagger in the velocity plot
-# (Figure 4A), as in the tables.
-# Fit equations, parameter values and explanations are given in the captions
-# and tables, not drawn over the data.
-#
-# Inputs : data/processed/*.csv
-# Outputs: figures/figure1_onp_calibration, figure2_enzyme_dilution,
-#          figure3_substrate_saturation (progress curves without and with IPTG),
-#          figure4_iptg_inhibition (Michaelis-Menten and Lineweaver-Burk plots) (.png and .pdf)
-#          figures/main_figure_values.csv (numbers used in the captions)
+
 source(here::here("R", "00_setup.R"))
 suppressPackageStartupMessages(library(patchwork))
 
