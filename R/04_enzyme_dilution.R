@@ -1,11 +1,5 @@
 # 04_enzyme_dilution.R
-# Part II: dependence of the initial velocity on the amount of enzyme.
-# Primary analysis on the reference dataset; the same analysis on the
-# experimental dataset for the Discussion.
-#
-# Inputs : data/processed/progress_curve_fits.csv, data/processed/onp_calibration.csv
-# Outputs: data/processed/enzyme_dilution_results.csv, enzyme_dilution_fit.csv
-#          tables/table4_enzyme_dilution (reference, with experimental values alongside)
+
 source(here::here("R", "00_setup.R"))
 
 fits  <- read_csv(file.path(dir_proc, "progress_curve_fits.csv"), show_col_types = FALSE)
