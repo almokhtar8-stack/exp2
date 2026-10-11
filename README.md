@@ -8,9 +8,10 @@ Almokhtar Aljarodi (lab partner: Abdulrahman Khardali)
 
 - `report/experiment_2_submission.pdf` (also `.docx`)
 
-## Supplementary figures
+## Figures
 
-`supplementary_figures/` contains Figures S1–S4 (additional analysis of our own data, not part of the report).
+- `figures/`: Figures 1–4 and the Question 1 diagram, as used in the report.
+- `figures/supplementary_figures/`: Figures S1–S4 (additional analysis of our own data).
 
 ## Data
 
